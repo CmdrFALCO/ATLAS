@@ -176,7 +176,6 @@ export class ThemisModule implements AtlasModule {
 
         // 3. Evaluate Gate (AND)
         const gate = this.nodes[2];
-        const input1 = this.wires[0].getObjectByName('tubeMesh') ? stateA : false;
         // Wait, wires just carry visual. Logic is abstract.
         // Let's cheat for demo:
         const gateState = stateA && stateB;
