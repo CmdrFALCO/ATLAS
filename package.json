@@ -1,0 +1,21 @@
+{
+    "name": "atlas-vr",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "three": "^0.172.0",
+        "three-forcegraph": "^1.43.0"
+    },
+    "devDependencies": {
+        "@types/three": "^0.172.0",
+        "typescript": "^5.7.3",
+        "vite": "^6.0.7",
+        "@vitejs/plugin-basic-ssl": "^1.2.0"
+    }
+}
