@@ -3,6 +3,7 @@ import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { RealityAnchor } from './RealityAnchor';
 import { AtlasModule } from './ModuleLoader';
 import { ScenarioRunner } from './ScenarioRunner';
+import { InteractionSystem } from './InteractionSystem';
 
 export class AtlasEngine {
     private static instance: AtlasEngine;
@@ -15,6 +16,7 @@ export class AtlasEngine {
     // Engine components
     public realityAnchor: RealityAnchor;
     public scenarioRunner: ScenarioRunner;
+    public interactionSystem: InteractionSystem;
 
     // State
     private activeModule: AtlasModule | null = null;
@@ -54,6 +56,9 @@ export class AtlasEngine {
 
         // 7. Systems
         this.scenarioRunner = new ScenarioRunner();
+        this.interactionSystem = new InteractionSystem(this.scene, this.scenarioRunner);
+        this.interactionSystem.setupControllers(this.renderer);
+
         this.clock = new THREE.Clock();
 
         // 8. Event Listeners
@@ -99,6 +104,11 @@ export class AtlasEngine {
         // Update active module
         if (this.activeModule) {
             this.activeModule.update(dt);
+
+            // Interaction System Update
+            if (this.activeModule.getInteractables) {
+                this.interactionSystem.update(this.activeModule.getInteractables());
+            }
         }
 
         this.renderer.render(this.scene, this.camera);

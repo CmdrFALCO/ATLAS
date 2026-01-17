@@ -22,4 +22,9 @@ export interface AtlasModule {
      * Called when switching away. Clean up all resources/objects here.
      */
     unload(): void;
+
+    /**
+     * strict list of objects to test against raycasting.
+     */
+    getInteractables?(): THREE.Object3D[];
 }

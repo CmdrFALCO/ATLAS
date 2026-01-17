@@ -14,6 +14,21 @@ class TestModule implements AtlasModule {
         this.cube = new THREE.Mesh(geometry, material);
         this.cube.position.set(0, 1.5, -1); // 1.5m up, 1m in front
         scene.add(this.cube);
+
+        // Listen for interactions
+        AtlasEngine.getInstance().scenarioRunner.on('INTERACTION_HOVER', (data: any) => {
+            if (this.cube && (this.cube.material as THREE.MeshStandardMaterial)) {
+                if (data.object === this.cube) {
+                    (this.cube.material as THREE.MeshStandardMaterial).color.set(0xff0000); // Red on hover
+                } else {
+                    (this.cube.material as THREE.MeshStandardMaterial).color.set(0x00ff00); // Green normal
+                }
+            }
+        });
+    }
+
+    getInteractables(): THREE.Object3D[] {
+        return this.cube ? [this.cube] : [];
     }
 
     update(dt: number): void {

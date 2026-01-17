@@ -12,6 +12,7 @@
 - [x] Documentation structure defined.
 - [x] Repository initialized with shared types and VR spike.
 - [x] **WP-02-CORE**: Implemented AtlasEngine, RealityAnchor, and ModuleLoader.
+- [x] **WP-03-INPUT**: Implemented InteractionSystem with Raycasting and Controllers.
 
 ## Next Session Goal
-- Implement **WP-03-INPUT** (Interaction System).
+- Begin **Phase 2: Mnemosyne** (WP-04-DATA).
