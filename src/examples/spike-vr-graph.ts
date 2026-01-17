@@ -1,7 +1,7 @@
 import ForceGraph3D from 'three-forcegraph';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import * as THREE from 'three';
-import { VRNode, VREdge, VRCluster } from '../shared/types.ts';
+import { VRNode, VREdge, VRCluster } from '../shared/types';
 
 // Fake Data Generation
 const clusters: VRCluster[] = [
@@ -49,7 +49,7 @@ directionalLight.position.set(1, 1, 1);
 scene.add(directionalLight);
 
 // Graph
-const graph = new ForceGraph3D()
+const graph = (new ForceGraph3D() as any)
     .graphData({ nodes, links: edges })
     .nodeLabel('title')
     .nodeColor((n: any) => {
