@@ -14,6 +14,9 @@
 - [x] **WP-02-CORE**: Implemented AtlasEngine, RealityAnchor, and ModuleLoader.
 - [x] **WP-03-INPUT**: Implemented InteractionSystem with Raycasting and Controllers.
 - [x] **WP-04-DATA**: Generated `knowledge-graph.json` (150 nodes, 439 edges).
+- [x] **WP-05-VIZ**: Mnemosyne Visualization (Graph, Colors, Interaction)
+- [x] **WP-06-UI**: Trust Panel (Spatial UI, Events)
+- [ ] **WP-07-LOGIC**: Themis Implementation (Logic/Nodes)
 
 ## Next Session Goal
-- Implement **WP-05-VIZ** (3d-force-graph Integration).
+- Implement **WP-07-LOGIC** (Themis Implementation).

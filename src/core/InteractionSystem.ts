@@ -14,8 +14,26 @@ export class InteractionSystem {
     // State
     private hoveredObject: THREE.Object3D | null = null;
 
+    // Mouse State
+    private mouse = new THREE.Vector2();
+    private camera: THREE.PerspectiveCamera | null = null;
+    private isMouseInteraction = false;
+
     constructor(private scene: THREE.Scene, private runner: ScenarioRunner) {
         this.raycaster = new THREE.Raycaster();
+
+        // Mouse Listeners
+        window.addEventListener('mousemove', (e) => {
+            this.mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+            this.mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            this.isMouseInteraction = true;
+        });
+
+        // Use click for select?
+    }
+
+    public setCamera(camera: THREE.PerspectiveCamera) {
+        this.camera = camera;
     }
 
     public setupControllers(renderer: THREE.WebGLRenderer) {
@@ -25,8 +43,9 @@ export class InteractionSystem {
         for (let i = 0; i < 2; i++) {
             // 1. Target Ray Space (The pointer)
             const controller = renderer.xr.getController(i);
-            this.scene.add(controller);
+            this.scene.add(controller); // Ensure controller is added to scene!
             this.controllers.push(controller);
+            controller.name = `controller_${i}`; // For debugging
 
             // Visual Ray
             const geometry = new THREE.BufferGeometry().setFromPoints([
@@ -54,53 +73,81 @@ export class InteractionSystem {
     public update(interactables: THREE.Object3D[]) {
         if (!interactables || interactables.length === 0) return;
 
-        // Use Controller 0 (Right hand usually) for main interaction for now, or check both
-        this.checkIntersection(this.controllers[0], interactables);
-        this.checkIntersection(this.controllers[1], interactables);
-    }
+        // Collect all potential hits
+        let bestHit: { object: THREE.Object3D, distance: number, source: any } | null = null;
 
-    private checkIntersection(controller: THREE.XRTargetRaySpace, objects: THREE.Object3D[]) {
-        if (!controller.userData.isSelecting) {
-            // Only raycast for one controller at a time to avoid chaos, or both? 
-            // For now, let's just make both raycast.
+        // 1. Check VR Controllers
+        for (const controller of this.controllers) {
+            const hit = this.getControllerHit(controller, interactables);
+            if (hit) {
+                if (!bestHit || hit.distance < bestHit.distance) {
+                    bestHit = { ...hit, source: controller };
+                }
+            } else {
+                // Reset ray visual if no hit
+                const line = controller.getObjectByName('line');
+                if (line) line.scale.z = 5;
+            }
         }
 
-        this.tempMatrix.identity().extractRotation(controller.matrixWorld);
-        this.raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
-        this.raycaster.ray.direction.set(0, 0, -1).applyMatrix4(this.tempMatrix);
+        // 2. Check Mouse
+        if (this.camera && this.isMouseInteraction) {
+            const hit = this.getMouseHit(interactables);
+            if (hit) {
+                if (!bestHit || hit.distance < bestHit.distance) {
+                    bestHit = { ...hit, source: 'mouse' };
+                }
+            }
+        }
 
-        const intersects = this.raycaster.intersectObjects(objects, false); // False = no redundant recursive check if we pass nice flat list
+        // 3. Process Best Hit
+        if (bestHit) {
+            const object = bestHit.object;
 
-        if (intersects.length > 0) {
-            const object = intersects[0].object;
+            // Visual Ray Update (VR only)
+            if (bestHit.source !== 'mouse') {
+                const line = bestHit.source.getObjectByName('line');
+                if (line) line.scale.z = bestHit.distance;
+            }
+
+            // State Update
             if (this.hoveredObject !== object) {
+                console.log('InteractionSystem: Hover', object);
                 this.hoveredObject = object;
                 this.runner.emit('INTERACTION_HOVER', { object });
 
-                // Haptic feedback
-                if ((controller as any).gamepad && (controller as any).gamepad.hapticActuators) {
-                    (controller as any).gamepad.hapticActuators[0]?.pulse(0.1, 10);
+                // Haptics (VR only)
+                if (bestHit.source !== 'mouse') {
+                    const controller = bestHit.source;
+                    if ((controller as any).gamepad && (controller as any).gamepad.hapticActuators) {
+                        (controller as any).gamepad.hapticActuators[0]?.pulse(0.1, 10);
+                    }
                 }
             }
-
-            // Shorten ray to hit point
-            const line = controller.getObjectByName('line');
-            if (line) {
-                line.scale.z = intersects[0].distance;
-            }
-
         } else {
+            // No hits from ANY source
             if (this.hoveredObject) {
                 this.runner.emit('INTERACTION_HOVER', { object: null });
                 this.hoveredObject = null;
             }
-            // Reset ray length
-            const line = controller.getObjectByName('line');
-            if (line) {
-                line.scale.z = 5;
-            }
         }
     }
+
+    private getMouseHit(objects: THREE.Object3D[]) {
+        if (!this.camera) return null;
+        this.raycaster.setFromCamera(this.mouse, this.camera);
+        const intersects = this.raycaster.intersectObjects(objects, true);
+        return intersects.length > 0 ? intersects[0] : null;
+    }
+
+    private getControllerHit(controller: THREE.XRTargetRaySpace, objects: THREE.Object3D[]) {
+        this.tempMatrix.identity().extractRotation(controller.matrixWorld);
+        this.raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
+        this.raycaster.ray.direction.set(0, 0, -1).applyMatrix4(this.tempMatrix);
+        const intersects = this.raycaster.intersectObjects(objects, true);
+        return intersects.length > 0 ? intersects[0] : null;
+    }
+
 
     private onSelectStart(index: number) {
         const controller = this.controllers[index];

@@ -4,9 +4,6 @@
 			"path": "."
 		},
 		{
-			"path": "../ATHENA"
-		},
-		{
 			"path": "../VR_related/3d-force-graph"
 		}
 	],

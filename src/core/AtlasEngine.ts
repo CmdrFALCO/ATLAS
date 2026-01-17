@@ -57,6 +57,7 @@ export class AtlasEngine {
         // 7. Systems
         this.scenarioRunner = new ScenarioRunner();
         this.interactionSystem = new InteractionSystem(this.scene, this.scenarioRunner);
+        this.interactionSystem.setCamera(this.camera); // Pass camera for mouse interaction
         this.interactionSystem.setupControllers(this.renderer);
 
         this.clock = new THREE.Clock();
