@@ -13,6 +13,7 @@
 - [x] Repository initialized with shared types and VR spike.
 - [x] **WP-02-CORE**: Implemented AtlasEngine, RealityAnchor, and ModuleLoader.
 - [x] **WP-03-INPUT**: Implemented InteractionSystem with Raycasting and Controllers.
+- [x] **WP-04-DATA**: Generated `knowledge-graph.json` (150 nodes, 439 edges).
 
 ## Next Session Goal
-- Begin **Phase 2: Mnemosyne** (WP-04-DATA).
+- Implement **WP-05-VIZ** (3d-force-graph Integration).

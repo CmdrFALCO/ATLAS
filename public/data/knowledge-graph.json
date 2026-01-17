@@ -1,0 +1,3725 @@
+{
+  "nodes": [
+    {
+      "id": "node_c_chem_0",
+      "title": "Thermal Analysis",
+      "clusterId": "c_chem",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_1",
+      "title": "Thermal Alloy",
+      "clusterId": "c_chem",
+      "connectionCount": 8,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_2",
+      "title": "Polymer Matrix",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_3",
+      "title": "Advanced Analysis",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_4",
+      "title": "Polymer Analysis",
+      "clusterId": "c_chem",
+      "connectionCount": 10,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_5",
+      "title": "Thermal Composite",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_6",
+      "title": "Hybrid Interface",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_7",
+      "title": "Nano Interface",
+      "clusterId": "c_chem",
+      "connectionCount": 6,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_chem_8",
+      "title": "Polymer Alloy",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_9",
+      "title": "Polymer Alloy",
+      "clusterId": "c_chem",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_10",
+      "title": "Polymer Protocol",
+      "clusterId": "c_chem",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_11",
+      "title": "Hybrid Protocol",
+      "clusterId": "c_chem",
+      "connectionCount": 8,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_chem_12",
+      "title": "Quantum Alloy",
+      "clusterId": "c_chem",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_13",
+      "title": "Structural Composite",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_14",
+      "title": "Nano Framework",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_15",
+      "title": "Structural Alloy",
+      "clusterId": "c_chem",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_16",
+      "title": "Structural Composite",
+      "clusterId": "c_chem",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_17",
+      "title": "Advanced Interface",
+      "clusterId": "c_chem",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_18",
+      "title": "Quantum Synthesis",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_19",
+      "title": "Polymer Protocol",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_20",
+      "title": "Polymer Synthesis",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_21",
+      "title": "Nano Synthesis",
+      "clusterId": "c_chem",
+      "connectionCount": 7,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_chem_22",
+      "title": "Quantum Interface",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_23",
+      "title": "Hybrid Composite",
+      "clusterId": "c_chem",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_24",
+      "title": "Hybrid Matrix",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_chem_25",
+      "title": "Polymer Analysis",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_26",
+      "title": "Nano Interface",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_27",
+      "title": "Quantum Alloy",
+      "clusterId": "c_chem",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_28",
+      "title": "Bio Interface",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_chem_29",
+      "title": "Structural Framework",
+      "clusterId": "c_chem",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_0",
+      "title": "Polymer Protocol",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_therm_1",
+      "title": "Thermal Matrix",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_2",
+      "title": "Advanced Composite",
+      "clusterId": "c_therm",
+      "connectionCount": 1,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_3",
+      "title": "Thermal Interface",
+      "clusterId": "c_therm",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_4",
+      "title": "Hybrid Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_5",
+      "title": "Bio Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 9,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_6",
+      "title": "Advanced Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_7",
+      "title": "Hybrid Protocol",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_8",
+      "title": "Structural Synthesis",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_9",
+      "title": "Hybrid Matrix",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_therm_10",
+      "title": "Thermal Analysis",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_11",
+      "title": "Bio Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_12",
+      "title": "Structural Composite",
+      "clusterId": "c_therm",
+      "connectionCount": 9,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_13",
+      "title": "Hybrid Interface",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_14",
+      "title": "Nano Synthesis",
+      "clusterId": "c_therm",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_15",
+      "title": "Quantum Interface",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_16",
+      "title": "Structural Matrix",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_17",
+      "title": "Thermal Matrix",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_18",
+      "title": "Thermal Interface",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_19",
+      "title": "Polymer Framework",
+      "clusterId": "c_therm",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_20",
+      "title": "Advanced Synthesis",
+      "clusterId": "c_therm",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_21",
+      "title": "Thermal Synthesis",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_therm_22",
+      "title": "Bio Framework",
+      "clusterId": "c_therm",
+      "connectionCount": 10,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_23",
+      "title": "Nano Protocol",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_24",
+      "title": "Structural Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_25",
+      "title": "Structural Composite",
+      "clusterId": "c_therm",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_26",
+      "title": "Nano Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_27",
+      "title": "Polymer Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_28",
+      "title": "Hybrid Alloy",
+      "clusterId": "c_therm",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_therm_29",
+      "title": "Advanced Framework",
+      "clusterId": "c_therm",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_0",
+      "title": "Structural Alloy",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_1",
+      "title": "Structural Framework",
+      "clusterId": "c_mfg",
+      "connectionCount": 9,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_mfg_2",
+      "title": "Hybrid Interface",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_3",
+      "title": "Thermal Composite",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_mfg_4",
+      "title": "Polymer Interface",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_5",
+      "title": "Hybrid Synthesis",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_6",
+      "title": "Advanced Interface",
+      "clusterId": "c_mfg",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_7",
+      "title": "Hybrid Framework",
+      "clusterId": "c_mfg",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_8",
+      "title": "Polymer Analysis",
+      "clusterId": "c_mfg",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_9",
+      "title": "Quantum Alloy",
+      "clusterId": "c_mfg",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_10",
+      "title": "Polymer Interface",
+      "clusterId": "c_mfg",
+      "connectionCount": 8,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_mfg_11",
+      "title": "Hybrid Synthesis",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_12",
+      "title": "Quantum Analysis",
+      "clusterId": "c_mfg",
+      "connectionCount": 9,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_13",
+      "title": "Thermal Protocol",
+      "clusterId": "c_mfg",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_14",
+      "title": "Polymer Interface",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_15",
+      "title": "Bio Analysis",
+      "clusterId": "c_mfg",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_16",
+      "title": "Structural Matrix",
+      "clusterId": "c_mfg",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_17",
+      "title": "Thermal Analysis",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_18",
+      "title": "Quantum Protocol",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_19",
+      "title": "Hybrid Framework",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_20",
+      "title": "Thermal Alloy",
+      "clusterId": "c_mfg",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_21",
+      "title": "Quantum Framework",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_22",
+      "title": "Structural Analysis",
+      "clusterId": "c_mfg",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_23",
+      "title": "Polymer Protocol",
+      "clusterId": "c_mfg",
+      "connectionCount": 8,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_24",
+      "title": "Quantum Matrix",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_25",
+      "title": "Structural Framework",
+      "clusterId": "c_mfg",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_26",
+      "title": "Polymer Protocol",
+      "clusterId": "c_mfg",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_27",
+      "title": "Hybrid Analysis",
+      "clusterId": "c_mfg",
+      "connectionCount": 9,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_28",
+      "title": "Quantum Interface",
+      "clusterId": "c_mfg",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_mfg_29",
+      "title": "Advanced Composite",
+      "clusterId": "c_mfg",
+      "connectionCount": 5,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_test_0",
+      "title": "Polymer Alloy",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_1",
+      "title": "Nano Framework",
+      "clusterId": "c_test",
+      "connectionCount": 8,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_2",
+      "title": "Structural Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_3",
+      "title": "Thermal Protocol",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_4",
+      "title": "Hybrid Interface",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_5",
+      "title": "Advanced Framework",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_6",
+      "title": "Nano Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_7",
+      "title": "Hybrid Analysis",
+      "clusterId": "c_test",
+      "connectionCount": 8,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_8",
+      "title": "Polymer Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_9",
+      "title": "Structural Alloy",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_10",
+      "title": "Advanced Framework",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_11",
+      "title": "Structural Composite",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_test_12",
+      "title": "Quantum Matrix",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_13",
+      "title": "Nano Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 2,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_14",
+      "title": "Bio Composite",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_15",
+      "title": "Bio Framework",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_16",
+      "title": "Quantum Alloy",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_17",
+      "title": "Bio Composite",
+      "clusterId": "c_test",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_18",
+      "title": "Thermal Matrix",
+      "clusterId": "c_test",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_19",
+      "title": "Polymer Analysis",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_20",
+      "title": "Polymer Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 8,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_21",
+      "title": "Polymer Matrix",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_22",
+      "title": "Hybrid Protocol",
+      "clusterId": "c_test",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_23",
+      "title": "Bio Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_24",
+      "title": "Hybrid Interface",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_25",
+      "title": "Polymer Protocol",
+      "clusterId": "c_test",
+      "connectionCount": 10,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_26",
+      "title": "Thermal Alloy",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_27",
+      "title": "Hybrid Synthesis",
+      "clusterId": "c_test",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_28",
+      "title": "Nano Interface",
+      "clusterId": "c_test",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_test_29",
+      "title": "Polymer Matrix",
+      "clusterId": "c_test",
+      "connectionCount": 4,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_strat_0",
+      "title": "Advanced Synthesis",
+      "clusterId": "c_strat",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_1",
+      "title": "Bio Composite",
+      "clusterId": "c_strat",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_2",
+      "title": "Structural Analysis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_3",
+      "title": "Advanced Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_4",
+      "title": "Advanced Matrix",
+      "clusterId": "c_strat",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_5",
+      "title": "Polymer Synthesis",
+      "clusterId": "c_strat",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_6",
+      "title": "Bio Synthesis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_strat_7",
+      "title": "Thermal Analysis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_8",
+      "title": "Hybrid Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_9",
+      "title": "Structural Analysis",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_10",
+      "title": "Polymer Alloy",
+      "clusterId": "c_strat",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_11",
+      "title": "Quantum Interface",
+      "clusterId": "c_strat",
+      "connectionCount": 5,
+      "isAISuggested": true
+    },
+    {
+      "id": "node_c_strat_12",
+      "title": "Hybrid Analysis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_13",
+      "title": "Polymer Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_14",
+      "title": "Thermal Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_15",
+      "title": "Thermal Alloy",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_16",
+      "title": "Hybrid Composite",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_17",
+      "title": "Thermal Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_18",
+      "title": "Quantum Composite",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_19",
+      "title": "Advanced Synthesis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_20",
+      "title": "Bio Synthesis",
+      "clusterId": "c_strat",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_21",
+      "title": "Nano Analysis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_22",
+      "title": "Thermal Synthesis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_23",
+      "title": "Advanced Interface",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_24",
+      "title": "Structural Alloy",
+      "clusterId": "c_strat",
+      "connectionCount": 7,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_25",
+      "title": "Thermal Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 5,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_26",
+      "title": "Nano Matrix",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_27",
+      "title": "Quantum Framework",
+      "clusterId": "c_strat",
+      "connectionCount": 3,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_28",
+      "title": "Structural Protocol",
+      "clusterId": "c_strat",
+      "connectionCount": 6,
+      "isAISuggested": false
+    },
+    {
+      "id": "node_c_strat_29",
+      "title": "Nano Analysis",
+      "clusterId": "c_strat",
+      "connectionCount": 4,
+      "isAISuggested": false
+    }
+  ],
+  "links": [
+    {
+      "id": "edge_node_c_chem_0_node_c_chem_10",
+      "source": "node_c_chem_0",
+      "target": "node_c_chem_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_0_node_c_chem_21",
+      "source": "node_c_chem_0",
+      "target": "node_c_chem_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_0_node_c_chem_14",
+      "source": "node_c_chem_0",
+      "target": "node_c_chem_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_1_node_c_chem_3",
+      "source": "node_c_chem_1",
+      "target": "node_c_chem_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_1_node_c_chem_20",
+      "source": "node_c_chem_1",
+      "target": "node_c_chem_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_1_node_c_chem_25",
+      "source": "node_c_chem_1",
+      "target": "node_c_chem_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_1_node_c_chem_13",
+      "source": "node_c_chem_1",
+      "target": "node_c_chem_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_2_node_c_chem_16",
+      "source": "node_c_chem_2",
+      "target": "node_c_chem_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_2_node_c_chem_5",
+      "source": "node_c_chem_2",
+      "target": "node_c_chem_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_2_node_c_chem_28",
+      "source": "node_c_chem_2",
+      "target": "node_c_chem_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_2_node_c_chem_22",
+      "source": "node_c_chem_2",
+      "target": "node_c_chem_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_3_node_c_chem_0",
+      "source": "node_c_chem_3",
+      "target": "node_c_chem_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_3_node_c_chem_8",
+      "source": "node_c_chem_3",
+      "target": "node_c_chem_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_4_node_c_chem_15",
+      "source": "node_c_chem_4",
+      "target": "node_c_chem_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_4_node_c_chem_6",
+      "source": "node_c_chem_4",
+      "target": "node_c_chem_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_4_node_c_chem_18",
+      "source": "node_c_chem_4",
+      "target": "node_c_chem_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_5_node_c_chem_23",
+      "source": "node_c_chem_5",
+      "target": "node_c_chem_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_5_node_c_chem_10",
+      "source": "node_c_chem_5",
+      "target": "node_c_chem_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_6_node_c_chem_9",
+      "source": "node_c_chem_6",
+      "target": "node_c_chem_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_7_node_c_chem_11",
+      "source": "node_c_chem_7",
+      "target": "node_c_chem_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_7_node_c_chem_9",
+      "source": "node_c_chem_7",
+      "target": "node_c_chem_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_8_node_c_chem_1",
+      "source": "node_c_chem_8",
+      "target": "node_c_chem_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_8_node_c_chem_21",
+      "source": "node_c_chem_8",
+      "target": "node_c_chem_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_8_node_c_chem_4",
+      "source": "node_c_chem_8",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_9_node_c_chem_14",
+      "source": "node_c_chem_9",
+      "target": "node_c_chem_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_9_node_c_chem_16",
+      "source": "node_c_chem_9",
+      "target": "node_c_chem_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_9_node_c_chem_4",
+      "source": "node_c_chem_9",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_10_node_c_chem_29",
+      "source": "node_c_chem_10",
+      "target": "node_c_chem_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_10_node_c_chem_16",
+      "source": "node_c_chem_10",
+      "target": "node_c_chem_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_10_node_c_chem_15",
+      "source": "node_c_chem_10",
+      "target": "node_c_chem_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_11_node_c_chem_5",
+      "source": "node_c_chem_11",
+      "target": "node_c_chem_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_11_node_c_chem_24",
+      "source": "node_c_chem_11",
+      "target": "node_c_chem_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_11_node_c_chem_25",
+      "source": "node_c_chem_11",
+      "target": "node_c_chem_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_11_node_c_chem_12",
+      "source": "node_c_chem_11",
+      "target": "node_c_chem_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_12_node_c_chem_20",
+      "source": "node_c_chem_12",
+      "target": "node_c_chem_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_12_node_c_chem_18",
+      "source": "node_c_chem_12",
+      "target": "node_c_chem_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_12_node_c_chem_10",
+      "source": "node_c_chem_12",
+      "target": "node_c_chem_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_13_node_c_chem_9",
+      "source": "node_c_chem_13",
+      "target": "node_c_chem_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_13_node_c_chem_16",
+      "source": "node_c_chem_13",
+      "target": "node_c_chem_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_14_node_c_chem_21",
+      "source": "node_c_chem_14",
+      "target": "node_c_chem_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_14_node_c_chem_11",
+      "source": "node_c_chem_14",
+      "target": "node_c_chem_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_15_node_c_chem_0",
+      "source": "node_c_chem_15",
+      "target": "node_c_chem_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_15_node_c_chem_12",
+      "source": "node_c_chem_15",
+      "target": "node_c_chem_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_15_node_c_chem_24",
+      "source": "node_c_chem_15",
+      "target": "node_c_chem_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_16_node_c_chem_23",
+      "source": "node_c_chem_16",
+      "target": "node_c_chem_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_17_node_c_chem_11",
+      "source": "node_c_chem_17",
+      "target": "node_c_chem_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_17_node_c_chem_7",
+      "source": "node_c_chem_17",
+      "target": "node_c_chem_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_17_node_c_chem_12",
+      "source": "node_c_chem_17",
+      "target": "node_c_chem_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_18_node_c_chem_11",
+      "source": "node_c_chem_18",
+      "target": "node_c_chem_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_18_node_c_chem_1",
+      "source": "node_c_chem_18",
+      "target": "node_c_chem_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_19_node_c_chem_4",
+      "source": "node_c_chem_19",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_19_node_c_chem_23",
+      "source": "node_c_chem_19",
+      "target": "node_c_chem_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_20_node_c_chem_13",
+      "source": "node_c_chem_20",
+      "target": "node_c_chem_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_20_node_c_chem_18",
+      "source": "node_c_chem_20",
+      "target": "node_c_chem_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_21_node_c_chem_15",
+      "source": "node_c_chem_21",
+      "target": "node_c_chem_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_21_node_c_chem_3",
+      "source": "node_c_chem_21",
+      "target": "node_c_chem_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_21_node_c_chem_19",
+      "source": "node_c_chem_21",
+      "target": "node_c_chem_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_21_node_c_chem_24",
+      "source": "node_c_chem_21",
+      "target": "node_c_chem_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_22_node_c_chem_12",
+      "source": "node_c_chem_22",
+      "target": "node_c_chem_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_22_node_c_chem_7",
+      "source": "node_c_chem_22",
+      "target": "node_c_chem_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_23_node_c_chem_22",
+      "source": "node_c_chem_23",
+      "target": "node_c_chem_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_23_node_c_chem_4",
+      "source": "node_c_chem_23",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_23_node_c_chem_29",
+      "source": "node_c_chem_23",
+      "target": "node_c_chem_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_24_node_c_chem_1",
+      "source": "node_c_chem_24",
+      "target": "node_c_chem_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_24_node_c_chem_7",
+      "source": "node_c_chem_24",
+      "target": "node_c_chem_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_25_node_c_chem_28",
+      "source": "node_c_chem_25",
+      "target": "node_c_chem_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_25_node_c_chem_4",
+      "source": "node_c_chem_25",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_26_node_c_chem_3",
+      "source": "node_c_chem_26",
+      "target": "node_c_chem_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_26_node_c_chem_4",
+      "source": "node_c_chem_26",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_26_node_c_chem_23",
+      "source": "node_c_chem_26",
+      "target": "node_c_chem_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_26_node_c_chem_0",
+      "source": "node_c_chem_26",
+      "target": "node_c_chem_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_27_node_c_chem_15",
+      "source": "node_c_chem_27",
+      "target": "node_c_chem_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_27_node_c_chem_16",
+      "source": "node_c_chem_27",
+      "target": "node_c_chem_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_27_node_c_chem_2",
+      "source": "node_c_chem_27",
+      "target": "node_c_chem_2",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_27_node_c_chem_6",
+      "source": "node_c_chem_27",
+      "target": "node_c_chem_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_28_node_c_chem_6",
+      "source": "node_c_chem_28",
+      "target": "node_c_chem_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_28_node_c_chem_7",
+      "source": "node_c_chem_28",
+      "target": "node_c_chem_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_28_node_c_chem_20",
+      "source": "node_c_chem_28",
+      "target": "node_c_chem_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_29_node_c_chem_4",
+      "source": "node_c_chem_29",
+      "target": "node_c_chem_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_29_node_c_chem_19",
+      "source": "node_c_chem_29",
+      "target": "node_c_chem_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_chem_29_node_c_chem_1",
+      "source": "node_c_chem_29",
+      "target": "node_c_chem_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_0_node_c_therm_20",
+      "source": "node_c_therm_0",
+      "target": "node_c_therm_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_0_node_c_therm_10",
+      "source": "node_c_therm_0",
+      "target": "node_c_therm_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_0_node_c_therm_7",
+      "source": "node_c_therm_0",
+      "target": "node_c_therm_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_0_node_c_therm_22",
+      "source": "node_c_therm_0",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_1_node_c_therm_22",
+      "source": "node_c_therm_1",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_1_node_c_therm_5",
+      "source": "node_c_therm_1",
+      "target": "node_c_therm_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_2_node_c_therm_24",
+      "source": "node_c_therm_2",
+      "target": "node_c_therm_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_3_node_c_therm_5",
+      "source": "node_c_therm_3",
+      "target": "node_c_therm_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_3_node_c_therm_24",
+      "source": "node_c_therm_3",
+      "target": "node_c_therm_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_4_node_c_therm_6",
+      "source": "node_c_therm_4",
+      "target": "node_c_therm_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_4_node_c_therm_18",
+      "source": "node_c_therm_4",
+      "target": "node_c_therm_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_5_node_c_therm_25",
+      "source": "node_c_therm_5",
+      "target": "node_c_therm_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_5_node_c_therm_22",
+      "source": "node_c_therm_5",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_5_node_c_therm_21",
+      "source": "node_c_therm_5",
+      "target": "node_c_therm_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_5_node_c_therm_20",
+      "source": "node_c_therm_5",
+      "target": "node_c_therm_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_6_node_c_therm_18",
+      "source": "node_c_therm_6",
+      "target": "node_c_therm_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_6_node_c_therm_13",
+      "source": "node_c_therm_6",
+      "target": "node_c_therm_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_7_node_c_therm_12",
+      "source": "node_c_therm_7",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_7_node_c_therm_1",
+      "source": "node_c_therm_7",
+      "target": "node_c_therm_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_8_node_c_therm_4",
+      "source": "node_c_therm_8",
+      "target": "node_c_therm_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_8_node_c_therm_5",
+      "source": "node_c_therm_8",
+      "target": "node_c_therm_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_8_node_c_therm_14",
+      "source": "node_c_therm_8",
+      "target": "node_c_therm_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_9_node_c_therm_27",
+      "source": "node_c_therm_9",
+      "target": "node_c_therm_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_9_node_c_therm_20",
+      "source": "node_c_therm_9",
+      "target": "node_c_therm_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_9_node_c_therm_1",
+      "source": "node_c_therm_9",
+      "target": "node_c_therm_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_9_node_c_therm_12",
+      "source": "node_c_therm_9",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_10_node_c_therm_1",
+      "source": "node_c_therm_10",
+      "target": "node_c_therm_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_10_node_c_therm_28",
+      "source": "node_c_therm_10",
+      "target": "node_c_therm_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_10_node_c_therm_16",
+      "source": "node_c_therm_10",
+      "target": "node_c_therm_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_10_node_c_therm_12",
+      "source": "node_c_therm_10",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_11_node_c_therm_8",
+      "source": "node_c_therm_11",
+      "target": "node_c_therm_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_11_node_c_therm_7",
+      "source": "node_c_therm_11",
+      "target": "node_c_therm_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_11_node_c_therm_4",
+      "source": "node_c_therm_11",
+      "target": "node_c_therm_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_12_node_c_therm_5",
+      "source": "node_c_therm_12",
+      "target": "node_c_therm_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_12_node_c_therm_15",
+      "source": "node_c_therm_12",
+      "target": "node_c_therm_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_12_node_c_therm_28",
+      "source": "node_c_therm_12",
+      "target": "node_c_therm_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_13_node_c_therm_9",
+      "source": "node_c_therm_13",
+      "target": "node_c_therm_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_13_node_c_therm_29",
+      "source": "node_c_therm_13",
+      "target": "node_c_therm_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_13_node_c_therm_22",
+      "source": "node_c_therm_13",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_14_node_c_therm_0",
+      "source": "node_c_therm_14",
+      "target": "node_c_therm_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_14_node_c_therm_9",
+      "source": "node_c_therm_14",
+      "target": "node_c_therm_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_15_node_c_therm_4",
+      "source": "node_c_therm_15",
+      "target": "node_c_therm_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_15_node_c_therm_10",
+      "source": "node_c_therm_15",
+      "target": "node_c_therm_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_15_node_c_therm_21",
+      "source": "node_c_therm_15",
+      "target": "node_c_therm_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_15_node_c_therm_23",
+      "source": "node_c_therm_15",
+      "target": "node_c_therm_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_16_node_c_therm_11",
+      "source": "node_c_therm_16",
+      "target": "node_c_therm_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_16_node_c_therm_26",
+      "source": "node_c_therm_16",
+      "target": "node_c_therm_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_16_node_c_therm_20",
+      "source": "node_c_therm_16",
+      "target": "node_c_therm_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_16_node_c_therm_29",
+      "source": "node_c_therm_16",
+      "target": "node_c_therm_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_17_node_c_therm_1",
+      "source": "node_c_therm_17",
+      "target": "node_c_therm_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_17_node_c_therm_21",
+      "source": "node_c_therm_17",
+      "target": "node_c_therm_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_17_node_c_therm_22",
+      "source": "node_c_therm_17",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_17_node_c_therm_23",
+      "source": "node_c_therm_17",
+      "target": "node_c_therm_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_18_node_c_therm_24",
+      "source": "node_c_therm_18",
+      "target": "node_c_therm_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_18_node_c_therm_22",
+      "source": "node_c_therm_18",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_18_node_c_therm_26",
+      "source": "node_c_therm_18",
+      "target": "node_c_therm_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_18_node_c_therm_3",
+      "source": "node_c_therm_18",
+      "target": "node_c_therm_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_19_node_c_therm_5",
+      "source": "node_c_therm_19",
+      "target": "node_c_therm_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_19_node_c_therm_16",
+      "source": "node_c_therm_19",
+      "target": "node_c_therm_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_19_node_c_therm_27",
+      "source": "node_c_therm_19",
+      "target": "node_c_therm_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_20_node_c_therm_10",
+      "source": "node_c_therm_20",
+      "target": "node_c_therm_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_20_node_c_therm_4",
+      "source": "node_c_therm_20",
+      "target": "node_c_therm_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_21_node_c_therm_7",
+      "source": "node_c_therm_21",
+      "target": "node_c_therm_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_21_node_c_therm_3",
+      "source": "node_c_therm_21",
+      "target": "node_c_therm_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_22_node_c_therm_28",
+      "source": "node_c_therm_22",
+      "target": "node_c_therm_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_22_node_c_therm_7",
+      "source": "node_c_therm_22",
+      "target": "node_c_therm_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_23_node_c_therm_12",
+      "source": "node_c_therm_23",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_23_node_c_therm_22",
+      "source": "node_c_therm_23",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_24_node_c_therm_12",
+      "source": "node_c_therm_24",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_24_node_c_therm_8",
+      "source": "node_c_therm_24",
+      "target": "node_c_therm_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_24_node_c_therm_11",
+      "source": "node_c_therm_24",
+      "target": "node_c_therm_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_25_node_c_therm_22",
+      "source": "node_c_therm_25",
+      "target": "node_c_therm_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_25_node_c_therm_1",
+      "source": "node_c_therm_25",
+      "target": "node_c_therm_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_26_node_c_therm_0",
+      "source": "node_c_therm_26",
+      "target": "node_c_therm_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_26_node_c_therm_11",
+      "source": "node_c_therm_26",
+      "target": "node_c_therm_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_26_node_c_therm_20",
+      "source": "node_c_therm_26",
+      "target": "node_c_therm_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_26_node_c_therm_13",
+      "source": "node_c_therm_26",
+      "target": "node_c_therm_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_27_node_c_therm_11",
+      "source": "node_c_therm_27",
+      "target": "node_c_therm_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_27_node_c_therm_12",
+      "source": "node_c_therm_27",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_27_node_c_therm_17",
+      "source": "node_c_therm_27",
+      "target": "node_c_therm_17",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_27_node_c_therm_25",
+      "source": "node_c_therm_27",
+      "target": "node_c_therm_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_28_node_c_therm_16",
+      "source": "node_c_therm_28",
+      "target": "node_c_therm_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_28_node_c_therm_9",
+      "source": "node_c_therm_28",
+      "target": "node_c_therm_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_28_node_c_therm_0",
+      "source": "node_c_therm_28",
+      "target": "node_c_therm_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_29_node_c_therm_19",
+      "source": "node_c_therm_29",
+      "target": "node_c_therm_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_29_node_c_therm_14",
+      "source": "node_c_therm_29",
+      "target": "node_c_therm_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_therm_29_node_c_therm_23",
+      "source": "node_c_therm_29",
+      "target": "node_c_therm_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_0_node_c_mfg_14",
+      "source": "node_c_mfg_0",
+      "target": "node_c_mfg_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_0_node_c_mfg_27",
+      "source": "node_c_mfg_0",
+      "target": "node_c_mfg_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_0_node_c_mfg_17",
+      "source": "node_c_mfg_0",
+      "target": "node_c_mfg_17",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_1_node_c_mfg_4",
+      "source": "node_c_mfg_1",
+      "target": "node_c_mfg_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_1_node_c_mfg_8",
+      "source": "node_c_mfg_1",
+      "target": "node_c_mfg_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_1_node_c_mfg_22",
+      "source": "node_c_mfg_1",
+      "target": "node_c_mfg_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_2_node_c_mfg_22",
+      "source": "node_c_mfg_2",
+      "target": "node_c_mfg_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_2_node_c_mfg_23",
+      "source": "node_c_mfg_2",
+      "target": "node_c_mfg_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_2_node_c_mfg_4",
+      "source": "node_c_mfg_2",
+      "target": "node_c_mfg_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_3_node_c_mfg_21",
+      "source": "node_c_mfg_3",
+      "target": "node_c_mfg_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_3_node_c_mfg_1",
+      "source": "node_c_mfg_3",
+      "target": "node_c_mfg_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_3_node_c_mfg_10",
+      "source": "node_c_mfg_3",
+      "target": "node_c_mfg_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_3_node_c_mfg_8",
+      "source": "node_c_mfg_3",
+      "target": "node_c_mfg_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_4_node_c_mfg_8",
+      "source": "node_c_mfg_4",
+      "target": "node_c_mfg_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_4_node_c_mfg_0",
+      "source": "node_c_mfg_4",
+      "target": "node_c_mfg_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_5_node_c_mfg_7",
+      "source": "node_c_mfg_5",
+      "target": "node_c_mfg_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_5_node_c_mfg_13",
+      "source": "node_c_mfg_5",
+      "target": "node_c_mfg_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_5_node_c_mfg_20",
+      "source": "node_c_mfg_5",
+      "target": "node_c_mfg_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_6_node_c_mfg_27",
+      "source": "node_c_mfg_6",
+      "target": "node_c_mfg_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_6_node_c_mfg_16",
+      "source": "node_c_mfg_6",
+      "target": "node_c_mfg_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_7_node_c_mfg_1",
+      "source": "node_c_mfg_7",
+      "target": "node_c_mfg_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_7_node_c_mfg_29",
+      "source": "node_c_mfg_7",
+      "target": "node_c_mfg_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_8_node_c_mfg_12",
+      "source": "node_c_mfg_8",
+      "target": "node_c_mfg_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_8_node_c_mfg_23",
+      "source": "node_c_mfg_8",
+      "target": "node_c_mfg_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_9_node_c_mfg_10",
+      "source": "node_c_mfg_9",
+      "target": "node_c_mfg_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_9_node_c_mfg_15",
+      "source": "node_c_mfg_9",
+      "target": "node_c_mfg_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_9_node_c_mfg_19",
+      "source": "node_c_mfg_9",
+      "target": "node_c_mfg_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_10_node_c_mfg_12",
+      "source": "node_c_mfg_10",
+      "target": "node_c_mfg_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_10_node_c_mfg_14",
+      "source": "node_c_mfg_10",
+      "target": "node_c_mfg_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_10_node_c_mfg_20",
+      "source": "node_c_mfg_10",
+      "target": "node_c_mfg_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_11_node_c_mfg_20",
+      "source": "node_c_mfg_11",
+      "target": "node_c_mfg_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_11_node_c_mfg_2",
+      "source": "node_c_mfg_11",
+      "target": "node_c_mfg_2",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_11_node_c_mfg_8",
+      "source": "node_c_mfg_11",
+      "target": "node_c_mfg_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_11_node_c_mfg_12",
+      "source": "node_c_mfg_11",
+      "target": "node_c_mfg_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_12_node_c_mfg_1",
+      "source": "node_c_mfg_12",
+      "target": "node_c_mfg_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_12_node_c_mfg_27",
+      "source": "node_c_mfg_12",
+      "target": "node_c_mfg_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_12_node_c_mfg_2",
+      "source": "node_c_mfg_12",
+      "target": "node_c_mfg_2",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_12_node_c_mfg_28",
+      "source": "node_c_mfg_12",
+      "target": "node_c_mfg_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_13_node_c_mfg_24",
+      "source": "node_c_mfg_13",
+      "target": "node_c_mfg_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_13_node_c_mfg_11",
+      "source": "node_c_mfg_13",
+      "target": "node_c_mfg_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_13_node_c_mfg_7",
+      "source": "node_c_mfg_13",
+      "target": "node_c_mfg_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_13_node_c_mfg_12",
+      "source": "node_c_mfg_13",
+      "target": "node_c_mfg_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_14_node_c_mfg_1",
+      "source": "node_c_mfg_14",
+      "target": "node_c_mfg_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_14_node_c_mfg_5",
+      "source": "node_c_mfg_14",
+      "target": "node_c_mfg_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_15_node_c_mfg_6",
+      "source": "node_c_mfg_15",
+      "target": "node_c_mfg_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_15_node_c_mfg_27",
+      "source": "node_c_mfg_15",
+      "target": "node_c_mfg_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_16_node_c_mfg_22",
+      "source": "node_c_mfg_16",
+      "target": "node_c_mfg_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_16_node_c_mfg_15",
+      "source": "node_c_mfg_16",
+      "target": "node_c_mfg_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_16_node_c_mfg_29",
+      "source": "node_c_mfg_16",
+      "target": "node_c_mfg_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_17_node_c_mfg_3",
+      "source": "node_c_mfg_17",
+      "target": "node_c_mfg_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_17_node_c_mfg_13",
+      "source": "node_c_mfg_17",
+      "target": "node_c_mfg_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_17_node_c_mfg_10",
+      "source": "node_c_mfg_17",
+      "target": "node_c_mfg_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_18_node_c_mfg_20",
+      "source": "node_c_mfg_18",
+      "target": "node_c_mfg_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_18_node_c_mfg_6",
+      "source": "node_c_mfg_18",
+      "target": "node_c_mfg_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_18_node_c_mfg_16",
+      "source": "node_c_mfg_18",
+      "target": "node_c_mfg_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_19_node_c_mfg_8",
+      "source": "node_c_mfg_19",
+      "target": "node_c_mfg_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_19_node_c_mfg_25",
+      "source": "node_c_mfg_19",
+      "target": "node_c_mfg_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_19_node_c_mfg_20",
+      "source": "node_c_mfg_19",
+      "target": "node_c_mfg_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_20_node_c_mfg_25",
+      "source": "node_c_mfg_20",
+      "target": "node_c_mfg_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_21_node_c_mfg_20",
+      "source": "node_c_mfg_21",
+      "target": "node_c_mfg_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_21_node_c_mfg_15",
+      "source": "node_c_mfg_21",
+      "target": "node_c_mfg_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_22_node_c_mfg_23",
+      "source": "node_c_mfg_22",
+      "target": "node_c_mfg_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_22_node_c_mfg_25",
+      "source": "node_c_mfg_22",
+      "target": "node_c_mfg_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_22_node_c_mfg_27",
+      "source": "node_c_mfg_22",
+      "target": "node_c_mfg_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_22_node_c_mfg_5",
+      "source": "node_c_mfg_22",
+      "target": "node_c_mfg_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_23_node_c_mfg_6",
+      "source": "node_c_mfg_23",
+      "target": "node_c_mfg_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_23_node_c_mfg_10",
+      "source": "node_c_mfg_23",
+      "target": "node_c_mfg_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_23_node_c_mfg_12",
+      "source": "node_c_mfg_23",
+      "target": "node_c_mfg_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_24_node_c_mfg_15",
+      "source": "node_c_mfg_24",
+      "target": "node_c_mfg_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_24_node_c_mfg_1",
+      "source": "node_c_mfg_24",
+      "target": "node_c_mfg_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_24_node_c_mfg_7",
+      "source": "node_c_mfg_24",
+      "target": "node_c_mfg_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_25_node_c_mfg_13",
+      "source": "node_c_mfg_25",
+      "target": "node_c_mfg_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_26_node_c_mfg_6",
+      "source": "node_c_mfg_26",
+      "target": "node_c_mfg_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_26_node_c_mfg_19",
+      "source": "node_c_mfg_26",
+      "target": "node_c_mfg_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_26_node_c_mfg_16",
+      "source": "node_c_mfg_26",
+      "target": "node_c_mfg_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_27_node_c_mfg_18",
+      "source": "node_c_mfg_27",
+      "target": "node_c_mfg_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_27_node_c_mfg_21",
+      "source": "node_c_mfg_27",
+      "target": "node_c_mfg_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_27_node_c_mfg_4",
+      "source": "node_c_mfg_27",
+      "target": "node_c_mfg_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_27_node_c_mfg_16",
+      "source": "node_c_mfg_27",
+      "target": "node_c_mfg_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_28_node_c_mfg_10",
+      "source": "node_c_mfg_28",
+      "target": "node_c_mfg_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_28_node_c_mfg_1",
+      "source": "node_c_mfg_28",
+      "target": "node_c_mfg_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_28_node_c_mfg_23",
+      "source": "node_c_mfg_28",
+      "target": "node_c_mfg_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_28_node_c_mfg_7",
+      "source": "node_c_mfg_28",
+      "target": "node_c_mfg_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_29_node_c_mfg_23",
+      "source": "node_c_mfg_29",
+      "target": "node_c_mfg_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_29_node_c_mfg_28",
+      "source": "node_c_mfg_29",
+      "target": "node_c_mfg_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_mfg_29_node_c_mfg_15",
+      "source": "node_c_mfg_29",
+      "target": "node_c_mfg_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_0_node_c_test_15",
+      "source": "node_c_test_0",
+      "target": "node_c_test_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_0_node_c_test_4",
+      "source": "node_c_test_0",
+      "target": "node_c_test_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_0_node_c_test_25",
+      "source": "node_c_test_0",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_1_node_c_test_26",
+      "source": "node_c_test_1",
+      "target": "node_c_test_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_1_node_c_test_27",
+      "source": "node_c_test_1",
+      "target": "node_c_test_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_1_node_c_test_10",
+      "source": "node_c_test_1",
+      "target": "node_c_test_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_2_node_c_test_0",
+      "source": "node_c_test_2",
+      "target": "node_c_test_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_2_node_c_test_9",
+      "source": "node_c_test_2",
+      "target": "node_c_test_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_3_node_c_test_23",
+      "source": "node_c_test_3",
+      "target": "node_c_test_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_3_node_c_test_12",
+      "source": "node_c_test_3",
+      "target": "node_c_test_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_4_node_c_test_25",
+      "source": "node_c_test_4",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_4_node_c_test_22",
+      "source": "node_c_test_4",
+      "target": "node_c_test_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_5_node_c_test_26",
+      "source": "node_c_test_5",
+      "target": "node_c_test_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_5_node_c_test_4",
+      "source": "node_c_test_5",
+      "target": "node_c_test_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_5_node_c_test_16",
+      "source": "node_c_test_5",
+      "target": "node_c_test_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_5_node_c_test_18",
+      "source": "node_c_test_5",
+      "target": "node_c_test_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_6_node_c_test_7",
+      "source": "node_c_test_6",
+      "target": "node_c_test_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_6_node_c_test_20",
+      "source": "node_c_test_6",
+      "target": "node_c_test_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_6_node_c_test_28",
+      "source": "node_c_test_6",
+      "target": "node_c_test_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_7_node_c_test_2",
+      "source": "node_c_test_7",
+      "target": "node_c_test_2",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_7_node_c_test_20",
+      "source": "node_c_test_7",
+      "target": "node_c_test_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_8_node_c_test_17",
+      "source": "node_c_test_8",
+      "target": "node_c_test_17",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_8_node_c_test_1",
+      "source": "node_c_test_8",
+      "target": "node_c_test_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_8_node_c_test_18",
+      "source": "node_c_test_8",
+      "target": "node_c_test_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_9_node_c_test_27",
+      "source": "node_c_test_9",
+      "target": "node_c_test_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_9_node_c_test_7",
+      "source": "node_c_test_9",
+      "target": "node_c_test_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_10_node_c_test_8",
+      "source": "node_c_test_10",
+      "target": "node_c_test_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_10_node_c_test_24",
+      "source": "node_c_test_10",
+      "target": "node_c_test_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_11_node_c_test_10",
+      "source": "node_c_test_11",
+      "target": "node_c_test_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_11_node_c_test_12",
+      "source": "node_c_test_11",
+      "target": "node_c_test_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_11_node_c_test_21",
+      "source": "node_c_test_11",
+      "target": "node_c_test_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_12_node_c_test_6",
+      "source": "node_c_test_12",
+      "target": "node_c_test_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_12_node_c_test_8",
+      "source": "node_c_test_12",
+      "target": "node_c_test_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_12_node_c_test_25",
+      "source": "node_c_test_12",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_13_node_c_test_9",
+      "source": "node_c_test_13",
+      "target": "node_c_test_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_13_node_c_test_7",
+      "source": "node_c_test_13",
+      "target": "node_c_test_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_14_node_c_test_11",
+      "source": "node_c_test_14",
+      "target": "node_c_test_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_14_node_c_test_4",
+      "source": "node_c_test_14",
+      "target": "node_c_test_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_14_node_c_test_15",
+      "source": "node_c_test_14",
+      "target": "node_c_test_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_15_node_c_test_25",
+      "source": "node_c_test_15",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_15_node_c_test_26",
+      "source": "node_c_test_15",
+      "target": "node_c_test_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_15_node_c_test_23",
+      "source": "node_c_test_15",
+      "target": "node_c_test_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_16_node_c_test_14",
+      "source": "node_c_test_16",
+      "target": "node_c_test_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_16_node_c_test_3",
+      "source": "node_c_test_16",
+      "target": "node_c_test_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_16_node_c_test_0",
+      "source": "node_c_test_16",
+      "target": "node_c_test_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_16_node_c_test_11",
+      "source": "node_c_test_16",
+      "target": "node_c_test_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_17_node_c_test_29",
+      "source": "node_c_test_17",
+      "target": "node_c_test_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_17_node_c_test_24",
+      "source": "node_c_test_17",
+      "target": "node_c_test_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_17_node_c_test_27",
+      "source": "node_c_test_17",
+      "target": "node_c_test_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_18_node_c_test_7",
+      "source": "node_c_test_18",
+      "target": "node_c_test_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_18_node_c_test_1",
+      "source": "node_c_test_18",
+      "target": "node_c_test_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_18_node_c_test_20",
+      "source": "node_c_test_18",
+      "target": "node_c_test_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_19_node_c_test_10",
+      "source": "node_c_test_19",
+      "target": "node_c_test_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_19_node_c_test_25",
+      "source": "node_c_test_19",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_19_node_c_test_22",
+      "source": "node_c_test_19",
+      "target": "node_c_test_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_19_node_c_test_18",
+      "source": "node_c_test_19",
+      "target": "node_c_test_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_20_node_c_test_25",
+      "source": "node_c_test_20",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_20_node_c_test_1",
+      "source": "node_c_test_20",
+      "target": "node_c_test_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_20_node_c_test_29",
+      "source": "node_c_test_20",
+      "target": "node_c_test_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_20_node_c_test_26",
+      "source": "node_c_test_20",
+      "target": "node_c_test_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_21_node_c_test_20",
+      "source": "node_c_test_21",
+      "target": "node_c_test_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_21_node_c_test_9",
+      "source": "node_c_test_21",
+      "target": "node_c_test_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_21_node_c_test_1",
+      "source": "node_c_test_21",
+      "target": "node_c_test_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_21_node_c_test_7",
+      "source": "node_c_test_21",
+      "target": "node_c_test_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_22_node_c_test_14",
+      "source": "node_c_test_22",
+      "target": "node_c_test_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_22_node_c_test_0",
+      "source": "node_c_test_22",
+      "target": "node_c_test_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_23_node_c_test_28",
+      "source": "node_c_test_23",
+      "target": "node_c_test_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_23_node_c_test_7",
+      "source": "node_c_test_23",
+      "target": "node_c_test_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_23_node_c_test_5",
+      "source": "node_c_test_23",
+      "target": "node_c_test_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_24_node_c_test_25",
+      "source": "node_c_test_24",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_24_node_c_test_28",
+      "source": "node_c_test_24",
+      "target": "node_c_test_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_24_node_c_test_27",
+      "source": "node_c_test_24",
+      "target": "node_c_test_27",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_24_node_c_test_1",
+      "source": "node_c_test_24",
+      "target": "node_c_test_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_25_node_c_test_10",
+      "source": "node_c_test_25",
+      "target": "node_c_test_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_25_node_c_test_3",
+      "source": "node_c_test_25",
+      "target": "node_c_test_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_26_node_c_test_28",
+      "source": "node_c_test_26",
+      "target": "node_c_test_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_26_node_c_test_3",
+      "source": "node_c_test_26",
+      "target": "node_c_test_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_27_node_c_test_28",
+      "source": "node_c_test_27",
+      "target": "node_c_test_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_27_node_c_test_19",
+      "source": "node_c_test_27",
+      "target": "node_c_test_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_27_node_c_test_25",
+      "source": "node_c_test_27",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_28_node_c_test_3",
+      "source": "node_c_test_28",
+      "target": "node_c_test_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_29_node_c_test_21",
+      "source": "node_c_test_29",
+      "target": "node_c_test_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_test_29_node_c_test_18",
+      "source": "node_c_test_29",
+      "target": "node_c_test_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_0_node_c_strat_21",
+      "source": "node_c_strat_0",
+      "target": "node_c_strat_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_0_node_c_strat_4",
+      "source": "node_c_strat_0",
+      "target": "node_c_strat_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_0_node_c_strat_8",
+      "source": "node_c_strat_0",
+      "target": "node_c_strat_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_0_node_c_strat_5",
+      "source": "node_c_strat_0",
+      "target": "node_c_strat_5",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_1_node_c_strat_8",
+      "source": "node_c_strat_1",
+      "target": "node_c_strat_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_1_node_c_strat_19",
+      "source": "node_c_strat_1",
+      "target": "node_c_strat_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_1_node_c_strat_4",
+      "source": "node_c_strat_1",
+      "target": "node_c_strat_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_2_node_c_strat_25",
+      "source": "node_c_strat_2",
+      "target": "node_c_strat_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_2_node_c_strat_19",
+      "source": "node_c_strat_2",
+      "target": "node_c_strat_19",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_3_node_c_strat_17",
+      "source": "node_c_strat_3",
+      "target": "node_c_strat_17",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_3_node_c_strat_9",
+      "source": "node_c_strat_3",
+      "target": "node_c_strat_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_4_node_c_strat_8",
+      "source": "node_c_strat_4",
+      "target": "node_c_strat_8",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_4_node_c_strat_26",
+      "source": "node_c_strat_4",
+      "target": "node_c_strat_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_5_node_c_strat_16",
+      "source": "node_c_strat_5",
+      "target": "node_c_strat_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_5_node_c_strat_26",
+      "source": "node_c_strat_5",
+      "target": "node_c_strat_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_6_node_c_strat_11",
+      "source": "node_c_strat_6",
+      "target": "node_c_strat_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_6_node_c_strat_24",
+      "source": "node_c_strat_6",
+      "target": "node_c_strat_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_7_node_c_strat_23",
+      "source": "node_c_strat_7",
+      "target": "node_c_strat_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_7_node_c_strat_6",
+      "source": "node_c_strat_7",
+      "target": "node_c_strat_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_8_node_c_strat_9",
+      "source": "node_c_strat_8",
+      "target": "node_c_strat_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_8_node_c_strat_14",
+      "source": "node_c_strat_8",
+      "target": "node_c_strat_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_9_node_c_strat_1",
+      "source": "node_c_strat_9",
+      "target": "node_c_strat_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_9_node_c_strat_4",
+      "source": "node_c_strat_9",
+      "target": "node_c_strat_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_9_node_c_strat_11",
+      "source": "node_c_strat_9",
+      "target": "node_c_strat_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_10_node_c_strat_6",
+      "source": "node_c_strat_10",
+      "target": "node_c_strat_6",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_10_node_c_strat_12",
+      "source": "node_c_strat_10",
+      "target": "node_c_strat_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_10_node_c_strat_15",
+      "source": "node_c_strat_10",
+      "target": "node_c_strat_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_11_node_c_strat_12",
+      "source": "node_c_strat_11",
+      "target": "node_c_strat_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_11_node_c_strat_28",
+      "source": "node_c_strat_11",
+      "target": "node_c_strat_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_12_node_c_strat_16",
+      "source": "node_c_strat_12",
+      "target": "node_c_strat_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_13_node_c_strat_16",
+      "source": "node_c_strat_13",
+      "target": "node_c_strat_16",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_13_node_c_strat_14",
+      "source": "node_c_strat_13",
+      "target": "node_c_strat_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_14_node_c_strat_21",
+      "source": "node_c_strat_14",
+      "target": "node_c_strat_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_14_node_c_strat_1",
+      "source": "node_c_strat_14",
+      "target": "node_c_strat_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_14_node_c_strat_23",
+      "source": "node_c_strat_14",
+      "target": "node_c_strat_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_15_node_c_strat_20",
+      "source": "node_c_strat_15",
+      "target": "node_c_strat_20",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_15_node_c_strat_4",
+      "source": "node_c_strat_15",
+      "target": "node_c_strat_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_15_node_c_strat_7",
+      "source": "node_c_strat_15",
+      "target": "node_c_strat_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_16_node_c_strat_29",
+      "source": "node_c_strat_16",
+      "target": "node_c_strat_29",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_16_node_c_strat_28",
+      "source": "node_c_strat_16",
+      "target": "node_c_strat_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_16_node_c_strat_3",
+      "source": "node_c_strat_16",
+      "target": "node_c_strat_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_17_node_c_strat_24",
+      "source": "node_c_strat_17",
+      "target": "node_c_strat_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_17_node_c_strat_1",
+      "source": "node_c_strat_17",
+      "target": "node_c_strat_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_18_node_c_strat_22",
+      "source": "node_c_strat_18",
+      "target": "node_c_strat_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_18_node_c_strat_3",
+      "source": "node_c_strat_18",
+      "target": "node_c_strat_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_18_node_c_strat_26",
+      "source": "node_c_strat_18",
+      "target": "node_c_strat_26",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_19_node_c_strat_10",
+      "source": "node_c_strat_19",
+      "target": "node_c_strat_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_19_node_c_strat_25",
+      "source": "node_c_strat_19",
+      "target": "node_c_strat_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_20_node_c_strat_11",
+      "source": "node_c_strat_20",
+      "target": "node_c_strat_11",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_20_node_c_strat_1",
+      "source": "node_c_strat_20",
+      "target": "node_c_strat_1",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_20_node_c_strat_24",
+      "source": "node_c_strat_20",
+      "target": "node_c_strat_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_20_node_c_strat_28",
+      "source": "node_c_strat_20",
+      "target": "node_c_strat_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_21_node_c_strat_25",
+      "source": "node_c_strat_21",
+      "target": "node_c_strat_25",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_22_node_c_strat_15",
+      "source": "node_c_strat_22",
+      "target": "node_c_strat_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_22_node_c_strat_2",
+      "source": "node_c_strat_22",
+      "target": "node_c_strat_2",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_23_node_c_strat_12",
+      "source": "node_c_strat_23",
+      "target": "node_c_strat_12",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_23_node_c_strat_9",
+      "source": "node_c_strat_23",
+      "target": "node_c_strat_9",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_23_node_c_strat_22",
+      "source": "node_c_strat_23",
+      "target": "node_c_strat_22",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_24_node_c_strat_3",
+      "source": "node_c_strat_24",
+      "target": "node_c_strat_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_24_node_c_strat_21",
+      "source": "node_c_strat_24",
+      "target": "node_c_strat_21",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_24_node_c_strat_7",
+      "source": "node_c_strat_24",
+      "target": "node_c_strat_7",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_25_node_c_strat_15",
+      "source": "node_c_strat_25",
+      "target": "node_c_strat_15",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_25_node_c_strat_18",
+      "source": "node_c_strat_25",
+      "target": "node_c_strat_18",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_26_node_c_strat_10",
+      "source": "node_c_strat_26",
+      "target": "node_c_strat_10",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_26_node_c_strat_14",
+      "source": "node_c_strat_26",
+      "target": "node_c_strat_14",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_26_node_c_strat_28",
+      "source": "node_c_strat_26",
+      "target": "node_c_strat_28",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_27_node_c_strat_3",
+      "source": "node_c_strat_27",
+      "target": "node_c_strat_3",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_27_node_c_strat_13",
+      "source": "node_c_strat_27",
+      "target": "node_c_strat_13",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_27_node_c_strat_23",
+      "source": "node_c_strat_27",
+      "target": "node_c_strat_23",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_28_node_c_strat_4",
+      "source": "node_c_strat_28",
+      "target": "node_c_strat_4",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_28_node_c_strat_2",
+      "source": "node_c_strat_28",
+      "target": "node_c_strat_2",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_29_node_c_strat_0",
+      "source": "node_c_strat_29",
+      "target": "node_c_strat_0",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_29_node_c_strat_24",
+      "source": "node_c_strat_29",
+      "target": "node_c_strat_24",
+      "type": "explicit"
+    },
+    {
+      "id": "edge_node_c_strat_29_node_c_strat_8",
+      "source": "node_c_strat_29",
+      "target": "node_c_strat_8",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_0",
+      "source": "node_c_mfg_12",
+      "target": "node_c_therm_23",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_1",
+      "source": "node_c_chem_23",
+      "target": "node_c_strat_29",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_2",
+      "source": "node_c_chem_23",
+      "target": "node_c_mfg_26",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_3",
+      "source": "node_c_strat_1",
+      "target": "node_c_chem_13",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_4",
+      "source": "node_c_chem_26",
+      "target": "node_c_strat_29",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_5",
+      "source": "node_c_strat_24",
+      "target": "node_c_test_17",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_6",
+      "source": "node_c_test_16",
+      "target": "node_c_therm_12",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_7",
+      "source": "node_c_chem_13",
+      "target": "node_c_mfg_24",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_8",
+      "source": "node_c_strat_24",
+      "target": "node_c_therm_28",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_9",
+      "source": "node_c_test_20",
+      "target": "node_c_strat_17",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_10",
+      "source": "node_c_therm_25",
+      "target": "node_c_chem_28",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_11",
+      "source": "node_c_therm_22",
+      "target": "node_c_strat_7",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_12",
+      "source": "node_c_mfg_19",
+      "target": "node_c_strat_10",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_13",
+      "source": "node_c_strat_16",
+      "target": "node_c_therm_13",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_14",
+      "source": "node_c_strat_17",
+      "target": "node_c_test_17",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_15",
+      "source": "node_c_strat_3",
+      "target": "node_c_chem_5",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_16",
+      "source": "node_c_chem_8",
+      "target": "node_c_strat_11",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_17",
+      "source": "node_c_therm_19",
+      "target": "node_c_test_25",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_18",
+      "source": "node_c_chem_8",
+      "target": "node_c_strat_6",
+      "type": "explicit"
+    },
+    {
+      "id": "bridge_19",
+      "source": "node_c_mfg_9",
+      "target": "node_c_chem_15",
+      "type": "explicit"
+    },
+    {
+      "id": "ai_0",
+      "source": "node_c_mfg_1",
+      "target": "node_c_chem_24",
+      "type": "ai_suggested",
+      "confidence": 0.8862446227082486
+    },
+    {
+      "id": "ai_1",
+      "source": "node_c_mfg_10",
+      "target": "node_c_therm_9",
+      "type": "ai_suggested",
+      "confidence": 0.8997551652766633
+    },
+    {
+      "id": "ai_2",
+      "source": "node_c_mfg_1",
+      "target": "node_c_test_29",
+      "type": "ai_suggested",
+      "confidence": 0.9341225709399978
+    },
+    {
+      "id": "ai_3",
+      "source": "node_c_therm_0",
+      "target": "node_c_test_11",
+      "type": "ai_suggested",
+      "confidence": 0.9144993896911786
+    },
+    {
+      "id": "ai_4",
+      "source": "node_c_mfg_3",
+      "target": "node_c_chem_7",
+      "type": "ai_suggested",
+      "confidence": 0.8906212935269294
+    },
+    {
+      "id": "ai_5",
+      "source": "node_c_strat_11",
+      "target": "node_c_chem_21",
+      "type": "ai_suggested",
+      "confidence": 0.8611313255796457
+    },
+    {
+      "id": "ai_6",
+      "source": "node_c_therm_21",
+      "target": "node_c_chem_11",
+      "type": "ai_suggested",
+      "confidence": 0.9198649704198161
+    },
+    {
+      "id": "ai_7",
+      "source": "node_c_mfg_29",
+      "target": "node_c_strat_6",
+      "type": "ai_suggested",
+      "confidence": 0.9508063267263404
+    }
+  ],
+  "clusters": [
+    {
+      "id": "c_chem",
+      "label": "Chemistry",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "c_therm",
+      "label": "Thermal",
+      "color": "#22c55e"
+    },
+    {
+      "id": "c_mfg",
+      "label": "Manufacturing",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "c_test",
+      "label": "Testing",
+      "color": "#ef4444"
+    },
+    {
+      "id": "c_strat",
+      "label": "Strategy",
+      "color": "#8b5cf6"
+    }
+  ]
+}
