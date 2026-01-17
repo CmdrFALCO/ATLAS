@@ -11,6 +11,7 @@
 - [x] Specifications drafted.
 - [x] Documentation structure defined.
 - [x] Repository initialized with shared types and VR spike.
+- [x] **WP-02-CORE**: Implemented AtlasEngine, RealityAnchor, and ModuleLoader.
 
 ## Next Session Goal
-- Implement **WP-02-CORE** (AtlasEngine class).
+- Implement **WP-03-INPUT** (Interaction System).
