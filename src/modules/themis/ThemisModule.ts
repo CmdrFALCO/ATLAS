@@ -128,6 +128,9 @@ export class ThemisModule implements AtlasModule {
         // 3. Setup Interaction
         this.setupInteraction();
 
+        // 4. VR System Menu (WP-11)
+        this.createSystemMenu();
+
         console.log('[Themis] Loaded.');
     }
 
@@ -271,6 +274,12 @@ export class ThemisModule implements AtlasModule {
     private setupInteraction() {
         const runner = AtlasEngine.getInstance().scenarioRunner;
 
+        // Keyboard Shortcuts (Debug)
+        window.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 's') this.save();
+            if (e.key.toLowerCase() === 'l') this.loadCircuit();
+        });
+
         // Hover Feedback
         runner.on('INTERACTION_HOVER', (payload: { object: THREE.Object3D | null }) => {
             const obj = payload.object;
@@ -393,6 +402,20 @@ export class ThemisModule implements AtlasModule {
                     console.log('Toggling Node:', node.nodeId);
                     node.setState(!node.state);
                 }
+            } else if (obj.userData.type === 'button') {
+                // 3. System Menu Buttons
+                const action = obj.userData.action;
+                console.log('[Themis] Button Click:', action);
+
+                // Visual Feedback (Pulse)
+                const originalScale = obj.scale.clone();
+                obj.scale.multiplyScalar(0.9);
+                setTimeout(() => obj.scale.copy(originalScale), 150);
+
+                if (action === 'save') this.save();
+                if (action === 'load') this.loadCircuit();
+                if (action === 'clear') this.unload();
+
             } else {
                 // Clicked empty space?
                 if (this.draftWire) {
@@ -400,6 +423,64 @@ export class ThemisModule implements AtlasModule {
                 }
             }
         });
+    }
+
+    private createSystemMenu() {
+        const menuGroup = new THREE.Group();
+        menuGroup.position.set(-0.8, 1.2, -0.5); // Left side, accessible
+        menuGroup.rotation.y = Math.PI / 4; // Face user
+
+        // Panel Background
+        const panelGeo = new THREE.BoxGeometry(0.5, 0.6, 0.05);
+        const panelMat = new THREE.MeshStandardMaterial({ color: 0x333333 });
+        const panel = new THREE.Mesh(panelGeo, panelMat);
+        menuGroup.add(panel);
+
+        // Label
+        const canvas = document.createElement('canvas');
+        canvas.width = 256; canvas.height = 64;
+        const ctx = canvas.getContext('2d')!;
+        ctx.fillStyle = '#333333'; ctx.fillRect(0, 0, 256, 64);
+        ctx.fillStyle = 'white'; ctx.font = '40px Arial'; ctx.textAlign = 'center';
+        ctx.fillText('SYSTEM', 128, 45);
+        const tex = new THREE.CanvasTexture(canvas);
+        const label = new THREE.Mesh(new THREE.PlaneGeometry(0.4, 0.1), new THREE.MeshBasicMaterial({ map: tex }));
+        label.position.set(0, 0.22, 0.03);
+        menuGroup.add(label);
+
+        // Helper to create button
+        const createBtn = (text: string, color: number, y: number, action: string) => {
+            const btnGeo = new THREE.BoxGeometry(0.3, 0.1, 0.05);
+            const btnMat = new THREE.MeshStandardMaterial({ color });
+            const btn = new THREE.Mesh(btnGeo, btnMat);
+            btn.position.set(0, y, 0.03);
+            btn.userData = { type: 'button', action };
+
+            // Text
+            const c = document.createElement('canvas');
+            c.width = 256; c.height = 64;
+            const cx = c.getContext('2d')!;
+            cx.fillStyle = 'rgba(0,0,0,0)'; cx.fillRect(0, 0, 256, 64); // Transp
+            cx.fillStyle = 'white'; cx.font = 'bold 40px Arial'; cx.textAlign = 'center';
+            cx.fillText(text, 128, 45);
+            const t = new THREE.CanvasTexture(c);
+            const l = new THREE.Mesh(new THREE.PlaneGeometry(0.28, 0.08), new THREE.MeshBasicMaterial({ map: t, transparent: true }));
+            l.position.z = 0.04; // On top of button
+            btn.add(l);
+
+            return btn;
+        };
+
+        const btnSave = createBtn('SAVE', 0x228822, 0.1, 'save');
+        menuGroup.add(btnSave);
+
+        const btnLoad = createBtn('LOAD', 0x224488, -0.05, 'load');
+        menuGroup.add(btnLoad);
+
+        const btnClear = createBtn('CLEAR', 0x882222, -0.2, 'clear');
+        menuGroup.add(btnClear);
+
+        this.scene?.add(menuGroup);
     }
 
     private hasWire(portId: string): boolean {
@@ -484,4 +565,102 @@ export class ThemisModule implements AtlasModule {
         });
         return interactables;
     }
+
+    // Persistence
+    private save() {
+        const data: CircuitData = {
+            version: 1,
+            nodes: this.nodes.map(n => ({
+                id: n.nodeId,
+                type: n.type,
+                position: n.position.toArray(),
+                data: n.data
+            })),
+            wires: this.wires
+                .filter(w => w.sourceId !== 'cursor' && w.targetId !== 'cursor')
+                .map(w => ({
+                    sourceId: w.sourceId,
+                    targetId: w.targetId
+                }))
+        };
+
+        const json = JSON.stringify(data);
+        localStorage.setItem('atlas_circuit', json);
+        console.log('[Themis] Saved Circuit:', data);
+        if (this.subtitles) this.subtitles.show('Circuit Saved.');
+    }
+
+    private loadCircuit() {
+        const json = localStorage.getItem('atlas_circuit');
+        if (!json) {
+            console.warn('[Themis] No saved circuit found.');
+            if (this.subtitles) this.subtitles.show('No Save Found.');
+            return;
+        }
+
+        try {
+            const data: CircuitData = JSON.parse(json);
+            console.log('[Themis] Loading Circuit...', data);
+
+            // 1. Clear Scene
+            this.unload();
+            this.nodes = [];
+            this.wires = [];
+            this.nodeMap.clear();
+
+            // 2. Recreate Nodes
+            data.nodes.forEach(nData => {
+                const pos = new THREE.Vector3().fromArray(nData.position);
+                const node = new LogicNode(nData.id, nData.type, pos);
+                if (nData.data) node.data = nData.data;
+
+                this.scene?.add(node);
+                this.nodes.push(node);
+                this.nodeMap.set(node.nodeId, node);
+            });
+
+            // 3. Recreate Wires
+            data.wires.forEach(wData => {
+                // We need to find the specific ports to get positions
+                // Parse Logic
+                const src = this.parsePortId(wData.sourceId);
+                const tgt = this.parsePortId(wData.targetId);
+
+                const srcNode = this.nodeMap.get(src.nodeId);
+                const tgtNode = this.nodeMap.get(tgt.nodeId);
+
+                if (srcNode && tgtNode) {
+                    // Validate ports exist?
+                    const start = this.getPortGlobalPosition(wData.sourceId);
+                    const end = this.getPortGlobalPosition(wData.targetId);
+
+                    const wire = new Wire(start, end, wData.sourceId, wData.targetId);
+                    wire.setActive(true);
+                    this.scene?.add(wire);
+                    this.wires.push(wire);
+                }
+            });
+
+            console.log('[Themis] Load Complete.');
+            if (this.subtitles) this.subtitles.show('Circuit Loaded.');
+
+        } catch (e) {
+            console.error('[Themis] Load Failed:', e);
+            if (this.subtitles) this.subtitles.show('Load Failed.');
+        }
+    }
+}
+
+interface CircuitData {
+    version: number;
+    nodes: Array<{
+        id: string;
+        type: LogicType;
+        position: number[];
+        data: any;
+    }>;
+    wires: Array<{
+        sourceId: string;
+        targetId: string;
+    }>;
 }
