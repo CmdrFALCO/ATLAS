@@ -1,11 +1,11 @@
-
 import * as THREE from 'three';
 import { AtlasModule } from '../../core/ModuleLoader';
 import { AtlasEngine } from '../../core/AtlasEngine';
 import { LogicNode, LogicType } from './LogicNode';
-import { Wire } from './Wire'; // Correctly imported
+import { Wire } from './Wire';
 import { SubtitleOverlay } from './ui/SubtitleOverlay';
 import { NarrativeManager } from './logic/NarrativeManager';
+import { Synthesizer } from './audio/Synthesizer';
 
 export class ThemisModule implements AtlasModule {
     id = 'themis';
@@ -21,8 +21,15 @@ export class ThemisModule implements AtlasModule {
     private draftWire: Wire | null = null;
     private draftController: THREE.XRTargetRaySpace | null = null;
 
+    // UI
+    private systemMenu: THREE.Group | null = null;
+    private uiPanel: THREE.Mesh | null = null; // Track directly because parent changes on Grab
+
+    private audio: Synthesizer;
+
     constructor() {
         this.narrative = new NarrativeManager();
+        this.audio = new Synthesizer();
         this.narrative.on('LOGIC_CHECK', () => {
             console.log('[Narrative] Waiting for Logic...');
             this.narrative.pause();
@@ -356,6 +363,7 @@ export class ThemisModule implements AtlasModule {
                         this.scene?.add(wire);
                         this.wires.push(wire);
 
+                        this.audio.playConnect(); // Audio Feedback
                         this.destroyDraftWire();
                     } else {
                         console.log('Invalid Connection');
@@ -401,11 +409,13 @@ export class ThemisModule implements AtlasModule {
                 if (node.type === 'SOURCE') {
                     console.log('Toggling Node:', node.nodeId);
                     node.setState(!node.state);
+                    this.audio.playClick(); // Audio Feedback
                 }
             } else if (obj.userData.type === 'button') {
                 // 3. System Menu Buttons
                 const action = obj.userData.action;
                 console.log('[Themis] Button Click:', action);
+                this.audio.playClick(); // Audio Feedback
 
                 // Visual Feedback (Pulse)
                 const originalScale = obj.scale.clone();
@@ -434,6 +444,8 @@ export class ThemisModule implements AtlasModule {
         const panelGeo = new THREE.BoxGeometry(0.5, 0.6, 0.05);
         const panelMat = new THREE.MeshStandardMaterial({ color: 0x333333 });
         const panel = new THREE.Mesh(panelGeo, panelMat);
+        // Enable Grabbing
+        panel.userData = { type: 'ui_panel', grabbable: true };
         menuGroup.add(panel);
 
         // Label
@@ -446,7 +458,7 @@ export class ThemisModule implements AtlasModule {
         const tex = new THREE.CanvasTexture(canvas);
         const label = new THREE.Mesh(new THREE.PlaneGeometry(0.4, 0.1), new THREE.MeshBasicMaterial({ map: tex }));
         label.position.set(0, 0.22, 0.03);
-        menuGroup.add(label);
+        panel.add(label);
 
         // Helper to create button
         const createBtn = (text: string, color: number, y: number, action: string) => {
@@ -472,15 +484,17 @@ export class ThemisModule implements AtlasModule {
         };
 
         const btnSave = createBtn('SAVE', 0x228822, 0.1, 'save');
-        menuGroup.add(btnSave);
+        panel.add(btnSave);
 
         const btnLoad = createBtn('LOAD', 0x224488, -0.05, 'load');
-        menuGroup.add(btnLoad);
+        panel.add(btnLoad);
 
         const btnClear = createBtn('CLEAR', 0x882222, -0.2, 'clear');
-        menuGroup.add(btnClear);
+        panel.add(btnClear);
 
         this.scene?.add(menuGroup);
+        this.systemMenu = menuGroup;
+        this.uiPanel = panel;
     }
 
     private hasWire(portId: string): boolean {
@@ -495,6 +509,7 @@ export class ThemisModule implements AtlasModule {
             wire.removeFromParent();
             this.wires.splice(index, 1);
             console.log('Removed Wire:', wire.sourceId, '->', wire.targetId);
+            this.audio.playDisconnect();
         }
     }
 
@@ -550,6 +565,14 @@ export class ThemisModule implements AtlasModule {
     unload(): void {
         this.nodes.forEach(n => n.removeFromParent());
         this.wires.forEach(w => w.removeFromParent());
+        if (this.systemMenu) {
+            this.systemMenu.removeFromParent();
+            this.systemMenu = null;
+        }
+        if (this.uiPanel) {
+            this.uiPanel.removeFromParent(); // Just in case it was detached
+            this.uiPanel = null;
+        }
         this.destroyDraftWire();
     }
 
@@ -563,6 +586,20 @@ export class ThemisModule implements AtlasModule {
                 }
             });
         });
+
+        // Include System Menu (Track Panel directly as it might change parents)
+        if (this.uiPanel) {
+            // Include the panel itself
+            interactables.push(this.uiPanel);
+
+            // Include children (Buttons)
+            this.uiPanel.traverse(child => {
+                if (child.userData.type === 'button') {
+                    interactables.push(child);
+                }
+            });
+        }
+
         return interactables;
     }
 
