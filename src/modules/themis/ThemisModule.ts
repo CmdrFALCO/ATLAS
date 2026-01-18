@@ -411,25 +411,33 @@ export class ThemisModule implements AtlasModule {
                     node.setState(!node.state);
                     this.audio.playClick(); // Audio Feedback
                 }
-            } else if (obj.userData.type === 'button') {
-                // 3. System Menu Buttons
-                const action = obj.userData.action;
-                console.log('[Themis] Button Click:', action);
-                this.audio.playClick(); // Audio Feedback
-
-                // Visual Feedback (Pulse)
-                const originalScale = obj.scale.clone();
-                obj.scale.multiplyScalar(0.9);
-                setTimeout(() => obj.scale.copy(originalScale), 150);
-
-                if (action === 'save') this.save();
-                if (action === 'load') this.loadCircuit();
-                if (action === 'clear') this.unload();
-
             } else {
-                // Clicked empty space?
-                if (this.draftWire) {
-                    this.destroyDraftWire();
+                // Check for System Menu Button (Crawl up hierarchy)
+                let btn = obj;
+                while (btn.parent && btn.userData.type !== 'button') {
+                    btn = btn.parent;
+                    if (btn instanceof THREE.Scene) break; // Safety
+                }
+
+                if (btn.userData.type === 'button') {
+                    // 3. System Menu Buttons
+                    const action = btn.userData.action;
+                    console.log('[Themis] Button Click:', action);
+                    this.audio.playClick(); // Audio Feedback
+
+                    // Visual Feedback (Pulse)
+                    const originalScale = btn.scale.clone();
+                    btn.scale.multiplyScalar(0.9);
+                    setTimeout(() => btn.scale.copy(originalScale), 150);
+
+                    if (action === 'save') this.save();
+                    if (action === 'load') this.loadCircuit();
+                    if (action === 'clear') this.resetCircuit();
+                } else {
+                    // Clicked empty space?
+                    if (this.draftWire) {
+                        this.destroyDraftWire();
+                    }
                 }
             }
         });
@@ -563,8 +571,7 @@ export class ThemisModule implements AtlasModule {
     }
 
     unload(): void {
-        this.nodes.forEach(n => n.removeFromParent());
-        this.wires.forEach(w => w.removeFromParent());
+        this.resetCircuit();
         if (this.systemMenu) {
             this.systemMenu.removeFromParent();
             this.systemMenu = null;
@@ -573,6 +580,14 @@ export class ThemisModule implements AtlasModule {
             this.uiPanel.removeFromParent(); // Just in case it was detached
             this.uiPanel = null;
         }
+    }
+
+    private resetCircuit() {
+        this.nodes.forEach(n => n.removeFromParent());
+        this.wires.forEach(w => w.removeFromParent());
+        this.nodes = [];
+        this.wires = [];
+        this.nodeMap.clear();
         this.destroyDraftWire();
     }
 
@@ -639,8 +654,10 @@ export class ThemisModule implements AtlasModule {
             const data: CircuitData = JSON.parse(json);
             console.log('[Themis] Loading Circuit...', data);
 
+            console.log('[Themis] Loading Circuit...', data);
+
             // 1. Clear Scene
-            this.unload();
+            this.resetCircuit();
             this.nodes = [];
             this.wires = [];
             this.nodeMap.clear();
