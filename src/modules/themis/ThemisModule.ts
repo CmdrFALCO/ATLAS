@@ -11,8 +11,15 @@ export class ThemisModule implements AtlasModule {
     id = 'themis';
     private nodes: LogicNode[] = [];
     private wires: Wire[] = [];
-    private subtitles: SubtitleOverlay | null = null; // Add property
+    private subtitles: SubtitleOverlay | null = null;
     private narrative: NarrativeManager;
+
+    // Interaction State
+    private hoveredPort: THREE.Mesh | null = null;
+
+    // Draft Wire Interaction
+    private draftWire: Wire | null = null;
+    private draftController: THREE.XRTargetRaySpace | null = null;
 
     constructor() {
         this.narrative = new NarrativeManager();
@@ -122,14 +129,26 @@ export class ThemisModule implements AtlasModule {
         const start = source.position.clone().add(source.outputPorts[outIdx].position);
         const end = target.position.clone().add(target.inputPorts[inIdx].position);
 
-        const wire = new Wire(start, end, source.nodeId, target.nodeId);
+        const sourcePortId = `${source.nodeId}_out_${outIdx}`;
+        const targetPortId = `${target.nodeId}_in_${inIdx}`;
+
+        const wire = new Wire(start, end, sourcePortId, targetPortId);
         scene.add(wire);
         this.wires.push(wire);
     }
 
     update(dt: number): void {
-        // Run Animation
-        this.wires.forEach(w => w.update(dt));
+        // Run Animation & Position Updates
+        this.wires.forEach(w => {
+            w.update(dt);
+
+            // WP-09: Update Wire Positions (if not draft)
+            if (w.sourceId !== 'cursor' && w.targetId !== 'cursor') {
+                const start = this.getPortGlobalPosition(w.sourceId);
+                const end = this.getPortGlobalPosition(w.targetId);
+                w.updatePositions(start, end);
+            }
+        });
 
         // Update Subtitles
         if (this.subtitles) {
@@ -141,6 +160,14 @@ export class ThemisModule implements AtlasModule {
 
         // Run Logic Simulation (Every frame for smoothness)
         this.simulate();
+
+        // Update Draft Wire
+        if (this.draftWire && this.draftController) {
+            const targetPos = new THREE.Vector3();
+            this.draftController.getWorldPosition(targetPos);
+            targetPos.z -= 0.05; // Tip offset
+            this.draftWire.updateTarget(targetPos);
+        }
     }
 
     private setupNarrative() {
@@ -198,11 +225,111 @@ export class ThemisModule implements AtlasModule {
     private setupInteraction() {
         const runner = AtlasEngine.getInstance().scenarioRunner;
 
-        runner.on('INTERACTION_SELECT', (payload: { object: THREE.Object3D }) => {
+        // Hover Feedback
+        runner.on('INTERACTION_HOVER', (payload: { object: THREE.Object3D | null }) => {
             const obj = payload.object;
+            // Clear previous highlights? 
+            // Better: InteractionSystem handles entering/leaving state. 
+            // Simple approach: Scale up the hovered port.
+            // But we need to scale down the PREVIOUS one.
+            // Actually, InteractionSystem sends { object: null } when leaving.
 
-            // Check if it's part of a Node
-            // Traverse up to find parent LogicNode
+            // Check if it's a port
+            if (obj && obj.userData.type === 'port') {
+                obj.scale.set(1.5, 1.5, 1.5);
+                const mesh = obj as THREE.Mesh;
+                if (!Array.isArray(mesh.material)) {
+                    mesh.material = mesh.material.clone();
+                    (mesh.material as THREE.MeshStandardMaterial).color.set(0xffff00);
+                }
+            } else {
+                // How to reset?
+                // ThemisModule doesn't track "currently hovered port" to un-hover it.
+                // InteractionSystem only tells us what IS hovered. 
+                // We should iterate all ports and reset them? Expensive.
+                // Or store `hoveredPort` in ThemisModule.
+
+                if (this.hoveredPort) {
+                    this.hoveredPort.scale.set(1, 1, 1);
+                    (this.hoveredPort.material as THREE.MeshStandardMaterial).color.set(0xaaaaaa);
+                    this.hoveredPort = null;
+                }
+            }
+
+            if (obj && obj.userData.type === 'port') {
+                this.hoveredPort = obj as THREE.Mesh;
+            }
+        });
+
+        runner.on('INTERACTION_SELECT', (payload: { object: THREE.Object3D, controller: THREE.XRTargetRaySpace }) => {
+            const obj = payload.object;
+            const controller = payload.controller;
+
+            // 1. Check for Port interaction (Wiring)
+            if (obj.userData.type === 'port') {
+                const portId = obj.userData.id;
+
+                if (this.draftWire) {
+                    // Completing a wire?
+                    if (this.isValidConnection(this.draftWire.sourceId, portId)) {
+                        console.log('Connecting:', this.draftWire.sourceId, '->', portId);
+
+                        // Determine Source/Target relationship for Wire constructor
+                        let trueSourceId = this.draftWire.sourceId;
+                        let trueTargetId = portId;
+
+                        // Wire logic assumes flow Source -> Target.
+                        if (trueSourceId.includes('_in_')) {
+                            // Swap
+                            const temp = trueSourceId;
+                            trueSourceId = trueTargetId;
+                            trueTargetId = temp;
+                        }
+
+                        // Strict Rule: Single Input
+                        // If trueTargetId is an Input port, remove any existing wire to it.
+                        if (trueTargetId.includes('_in_')) {
+                            this.removeWireConnectedTo(trueTargetId);
+                        }
+
+                        // Re-fetch clean positions (Draft wire used cursor for one end)
+                        const pStart = this.getPortGlobalPosition(trueSourceId);
+                        const pEnd = this.getPortGlobalPosition(trueTargetId);
+
+                        const wire = new Wire(pStart, pEnd, trueSourceId, trueTargetId);
+                        wire.setActive(true);
+                        this.scene?.add(wire);
+                        this.wires.push(wire);
+
+                        this.destroyDraftWire();
+                    } else {
+                        console.log('Invalid Connection');
+                        this.destroyDraftWire();
+                    }
+                } else {
+                    // Start new Draft Wire OR Disconnect existing?
+
+                    // Interaction: Click Input Port with existing wire -> Disconnect
+                    if (portId.includes('_in_') && this.hasWire(portId)) {
+                        console.log('Disconnecting Input:', portId);
+                        this.removeWireConnectedTo(portId);
+                        return; // Don't start draft
+                    }
+
+                    // Interaction: Start Draft
+                    console.log('Start Draft Wire from', portId);
+                    const sourcePos = new THREE.Vector3();
+                    obj.getWorldPosition(sourcePos);
+
+                    // temporary target is same as source
+                    this.draftWire = new Wire(sourcePos, sourcePos, portId, 'cursor');
+                    this.scene?.add(this.draftWire);
+                    this.draftController = controller;
+                }
+                return;
+            }
+
+            // 2. Click LogicNode (Source Toggle)
             let current = obj;
             while (current.parent && !(current instanceof LogicNode)) {
                 current = current.parent;
@@ -210,27 +337,101 @@ export class ThemisModule implements AtlasModule {
 
             if (current instanceof LogicNode) {
                 const node = current as LogicNode;
-                // Toggle Source Nodes Only
+                // If we also cancel draft wire on node click?
+                if (this.draftWire) {
+                    this.destroyDraftWire();
+                    return;
+                }
+
                 if (node.type === 'SOURCE') {
                     console.log('Toggling Node:', node.nodeId);
                     node.setState(!node.state);
+                }
+            } else {
+                // Clicked empty space?
+                if (this.draftWire) {
+                    this.destroyDraftWire();
                 }
             }
         });
     }
 
+    private hasWire(portId: string): boolean {
+        return this.wires.some(w => w.sourceId === portId || w.targetId === portId);
+    }
+
+    private removeWireConnectedTo(portId: string) {
+        // Find wire
+        const index = this.wires.findIndex(w => w.sourceId === portId || w.targetId === portId);
+        if (index !== -1) {
+            const wire = this.wires[index];
+            wire.removeFromParent();
+            this.wires.splice(index, 1);
+            console.log('Removed Wire:', wire.sourceId, '->', wire.targetId);
+        }
+    }
+
+    private destroyDraftWire() {
+        if (this.draftWire) {
+            this.draftWire.removeFromParent();
+            this.draftWire = null;
+        }
+        this.draftController = null;
+    }
+
+    private isValidConnection(idA: string, idB: string): boolean {
+        // Prevent self
+        if (idA === idB) return false;
+
+        // Must be Input <-> Output
+        const aInput = idA.includes('_in_');
+        const bInput = idB.includes('_in_');
+
+        if (aInput === bInput) return false; // Output-Output or Input-Input invalid
+
+        // Check parent node (Prevent self-loop on same node?)
+        // IDs: nodeID_in_X
+        // Extract Node ID... regex or split
+        const nodeA = idA.split('_').slice(0, -2).join('_');
+        const nodeB = idB.split('_').slice(0, -2).join('_'); // Simplistic
+
+        if (nodeA === nodeB) return false; // Cannot wire node to itself directly
+
+        return true;
+    }
+
+    private getPortGlobalPosition(portId: string): THREE.Vector3 {
+        let pos = new THREE.Vector3();
+        // Search nodes
+        for (const node of this.nodes) {
+            // Check inputs
+            const inPort = node.inputPorts.find(p => p.userData.id === portId);
+            if (inPort) {
+                inPort.getWorldPosition(pos);
+                return pos;
+            }
+            // Check outputs
+            const outPort = node.outputPorts.find(p => p.userData.id === portId);
+            if (outPort) {
+                outPort.getWorldPosition(pos);
+                return pos;
+            }
+        }
+        return pos;
+    }
+
     unload(): void {
         this.nodes.forEach(n => n.removeFromParent());
         this.wires.forEach(w => w.removeFromParent());
+        this.destroyDraftWire();
     }
 
     getInteractables(): THREE.Object3D[] {
-        // Return mesh bodies for raycasting
-        // We added userData to the body mesh in LogicNode
         const interactables: THREE.Object3D[] = [];
         this.nodes.forEach(n => {
             n.traverse(child => {
-                if (child.userData.type === 'node') {
+                // Include Nodes AND Ports
+                if (child.userData.type === 'node' || child.userData.type === 'port') {
                     interactables.push(child);
                 }
             });

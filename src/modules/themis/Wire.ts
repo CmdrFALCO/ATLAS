@@ -18,11 +18,9 @@ export class Wire extends THREE.Group {
         this.targetId = targetId;
 
         // 1. Calculate Bezier points
-        // Control points to make it curve nicely (curving out horizontally)
         const p1 = sourcePos.clone();
         const p4 = targetPos.clone();
 
-        // P2 and P3 are control points
         const dist = p1.distanceTo(p4);
         const p2 = p1.clone().add(new THREE.Vector3(dist * 0.5, 0, 0)); // Right from source
         const p3 = p4.clone().add(new THREE.Vector3(-dist * 0.5, 0, 0)); // Left from target
@@ -34,6 +32,31 @@ export class Wire extends THREE.Group {
         const material = new THREE.MeshBasicMaterial({ color: 0x555555, transparent: true, opacity: 0.5 });
         this.tubeMesh = new THREE.Mesh(geometry, material);
         this.add(this.tubeMesh);
+    }
+
+    public updatePositions(startPos: THREE.Vector3, endPos: THREE.Vector3) {
+        // Re-calculate control points
+        const p1 = startPos.clone();
+        const p4 = endPos.clone();
+
+        const dist = p1.distanceTo(p4);
+        const p2 = p1.clone().add(new THREE.Vector3(dist * 0.5, 0, 0));
+        const p3 = p4.clone().add(new THREE.Vector3(-dist * 0.5, 0, 0));
+
+        this.curve.points[0].copy(p1);
+        this.curve.points[1].copy(p2);
+        this.curve.points[2].copy(p3);
+        this.curve.points[3].copy(p4);
+
+        // Update Geometry
+        this.tubeMesh.geometry.dispose();
+        this.tubeMesh.geometry = new THREE.TubeGeometry(this.curve, 20, 0.005, 8, false);
+    }
+
+    // Deprecated alias for compatibility
+    public updateTarget(targetPos: THREE.Vector3) {
+        const start = this.curve.points[0];
+        this.updatePositions(start, targetPos);
     }
 
     public setActive(active: boolean) {

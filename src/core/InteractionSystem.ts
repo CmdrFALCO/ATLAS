@@ -61,6 +61,8 @@ export class InteractionSystem {
             // Events
             controller.addEventListener('selectstart', () => this.onSelectStart(i));
             controller.addEventListener('selectend', () => this.onSelectEnd(i));
+            controller.addEventListener('squeezestart', () => this.onSqueezeStart(i));
+            controller.addEventListener('squeezeend', () => this.onSqueezeEnd(i));
 
             // 2. Grip Space (The visual representation of the hand/controller)
             const controllerGrip = renderer.xr.getControllerGrip(i);
@@ -144,6 +146,12 @@ export class InteractionSystem {
         this.tempMatrix.identity().extractRotation(controller.matrixWorld);
         this.raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
         this.raycaster.ray.direction.set(0, 0, -1).applyMatrix4(this.tempMatrix);
+
+        // FIX: Sprites require raycaster.camera to be set
+        if (this.camera) {
+            this.raycaster.camera = this.camera;
+        }
+
         const intersects = this.raycaster.intersectObjects(objects, true);
         return intersects.length > 0 ? intersects[0] : null;
     }
@@ -154,12 +162,43 @@ export class InteractionSystem {
         controller.userData.isSelecting = true;
 
         if (this.hoveredObject) {
-            this.runner.emit('INTERACTION_SELECT', { object: this.hoveredObject });
+            this.runner.emit('INTERACTION_SELECT', { object: this.hoveredObject, controller: controller });
         }
     }
 
     private onSelectEnd(index: number) {
         const controller = this.controllers[index];
         controller.userData.isSelecting = false;
+    }
+
+    private onSqueezeStart(index: number) {
+        const controller = this.controllers[index];
+        controller.userData.isSqueezing = true;
+
+        if (this.hoveredObject) {
+            // Traverse up to find the "Grabbable" root
+            let current = this.hoveredObject;
+            while (current.parent && !current.userData.grabbable) {
+                if (current.parent.type === 'Scene') break;
+                current = current.parent;
+            }
+
+            if (current.userData.grabbable) {
+                console.log('Grabbed:', current.name);
+                controller.attach(current); // Parenting while keeping world transform
+                controller.userData.heldObject = current;
+            }
+        }
+    }
+
+    private onSqueezeEnd(index: number) {
+        const controller = this.controllers[index];
+        controller.userData.isSqueezing = false;
+
+        if (controller.userData.heldObject) {
+            console.log('Released:', controller.userData.heldObject.name);
+            this.scene.attach(controller.userData.heldObject); // Return to world
+            controller.userData.heldObject = null;
+        }
     }
 }

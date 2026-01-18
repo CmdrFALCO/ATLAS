@@ -23,7 +23,14 @@ export class LogicNode extends THREE.Group {
         const material = new THREE.MeshStandardMaterial({ color: color });
         this.body = new THREE.Mesh(geometry, material);
         this.body.userData = { id: this.nodeId, type: 'node' }; // Interactable
-        this.add(this.body);
+        this.add(this.body); // Original line, keeping it as `this.body`
+
+        // Physics/Interaction Data
+        this.userData = {
+            type: 'node',
+            nodeId: this.nodeId,
+            grabbable: true // WP-09: Enable Grabbing
+        };
 
         // Label
         this.addLabel(type);
@@ -64,7 +71,7 @@ export class LogicNode extends THREE.Group {
     }
 
     private createPorts(type: LogicType) {
-        const portGeo = new THREE.SphereGeometry(0.03); // 3cm ports
+        const portGeo = new THREE.SphereGeometry(0.04); // Increased size
         const portMat = new THREE.MeshStandardMaterial({ color: 0xaaaaaa, roughness: 0.3 });
 
         // Logic for inputs/outputs
@@ -83,8 +90,8 @@ export class LogicNode extends THREE.Group {
             const port = new THREE.Mesh(portGeo, portMat.clone());
             // Stack vertically if multiple
             const yOffset = inputs > 1 ? (i === 0 ? 0.05 : -0.05) : 0;
-            port.position.set(-0.15, yOffset, 0);
-            port.userData = { id: `${this.nodeId}_in_${i} `, parentId: this.nodeId, type: 'port', isInput: true };
+            port.position.set(-0.15, yOffset, 0.05); // Move forward Z
+            port.userData = { id: `${this.nodeId}_in_${i}`, parentId: this.nodeId, type: 'port', isInput: true };
             this.inputPorts.push(port);
             this.add(port);
         }
@@ -92,8 +99,8 @@ export class LogicNode extends THREE.Group {
         // Create Output Ports (Right side)
         for (let i = 0; i < outputs; i++) {
             const port = new THREE.Mesh(portGeo, portMat.clone());
-            port.position.set(0.15, 0, 0);
-            port.userData = { id: `${this.nodeId}_out_${i} `, parentId: this.nodeId, type: 'port', isInput: false };
+            port.position.set(0.15, 0, 0.05); // Move forward Z
+            port.userData = { id: `${this.nodeId}_out_${i}`, parentId: this.nodeId, type: 'port', isInput: false };
             this.outputPorts.push(port);
             this.add(port);
         }
