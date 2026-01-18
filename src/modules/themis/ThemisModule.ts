@@ -101,6 +101,22 @@ export class ThemisModule implements AtlasModule {
         scene.add(nodeC);
         this.nodes.push(nodeC);
 
+        // WP-10 Playground: Advanced Nodes
+        const nodeTimer = new LogicNode('node_Timer', 'TIMER', new THREE.Vector3(1.2, 1.6, -1));
+        scene.add(nodeTimer);
+        this.nodes.push(nodeTimer);
+
+        const nodeToggle = new LogicNode('node_Toggle', 'TOGGLE', new THREE.Vector3(1.2, 1.3, -1));
+        scene.add(nodeToggle);
+        this.nodes.push(nodeToggle);
+
+        const nodeCounter = new LogicNode('node_Counter', 'COUNTER', new THREE.Vector3(1.2, 1.0, -1));
+        scene.add(nodeCounter);
+        this.nodes.push(nodeCounter);
+
+        // Map initial nodes
+        this.nodes.forEach(n => this.nodeMap.set(n.nodeId, n));
+
         // DEBUG: Log Positions
         this.nodes.forEach(n => console.log(`[Themis] Node ${n.nodeId} at ${n.position.toArray()} `));
 
@@ -138,6 +154,8 @@ export class ThemisModule implements AtlasModule {
     }
 
     update(dt: number): void {
+        this.nodes.forEach(n => n.update(dt));
+
         // Run Animation & Position Updates
         this.wires.forEach(w => {
             w.update(dt);
@@ -183,43 +201,71 @@ export class ThemisModule implements AtlasModule {
             const node = new LogicNode(data.id, data.type, pos);
             this.scene!.add(node); // Need scene reference!
             this.nodes.push(node);
+            this.nodeMap.set(node.nodeId, node);
             console.log(`[Narrative] Spawned Agent ${data.id}`);
         });
     }
 
+    // Generic Logic Engine State
+    private nodeMap: Map<string, LogicNode> = new Map();
+
     private simulate() {
-        if (this.wires.length < 3) return; // Prevent crash if wiring failed
+        // 1. Reset Inputs (Default low)
+        this.nodes.forEach(n => n.inputs = []);
 
-        // Simple discrete simulation
-        // 1. Evaluate Source Nodes (Manually toggled)
-        const stateA = this.nodes[0].state;
-        const stateB = this.nodes[1].state;
+        // 2. Propagate Signals via Wires
+        this.wires.forEach(w => {
+            // Skip Draft Wires
+            if (w.sourceId === 'cursor' || w.targetId === 'cursor') return;
 
-        // 2. Evaluate Wires (Pass state)
-        // Wire 0: A -> G
-        this.wires[0].setActive(stateA);
-        // Wire 1: B -> G
-        this.wires[1].setActive(stateB);
+            // Parse IDs: nodeId_type_index
+            const src = this.parsePortId(w.sourceId);
+            const tgt = this.parsePortId(w.targetId);
 
-        // 3. Evaluate Gate (AND)
-        const gate = this.nodes[2];
-        // Wait, wires just carry visual. Logic is abstract.
-        // Let's cheat for demo:
-        const gateState = stateA && stateB;
-        gate.setState(gateState);
+            const srcNode = this.nodeMap.get(src.nodeId);
+            const tgtNode = this.nodeMap.get(tgt.nodeId);
 
-        // 4. Output Wire
-        this.wires[2].setActive(gateState);
+            if (srcNode && tgtNode) {
+                // Get Source State
+                // If it's an output port, it carries the node's main state (usually).
+                const signal = srcNode.state;
 
-        // 5. Sink Node
-        this.nodes[3].setState(gateState);
+                // Deliver to Target Input
+                if (tgt.isInput) {
+                    tgtNode.inputs[tgt.index] = signal;
+                }
 
-        // Narrative Logic Check
-        if (this.waitingForLogic && gateState === true) {
+                // Update Wire Visuals
+                w.setActive(signal);
+            }
+        });
+
+        // 3. Compute Node States
+        let puzzleSolved = false;
+        this.nodes.forEach(n => {
+            n.compute();
+
+            // Generic puzzle check (For Node C being True)
+            if (n.nodeId === 'node_C' && n.state === true) {
+                puzzleSolved = true;
+            }
+        });
+
+        // 4. Narrative Trigger
+        if (this.waitingForLogic && puzzleSolved) {
             console.log('[Themis] Puzzle Solved!');
             this.waitingForLogic = false;
             this.narrative.resume();
         }
+    }
+
+    private parsePortId(portId: string) {
+        // Format: nodeId_in_index or nodeId_out_index
+        const parts = portId.split('_');
+        const index = parseInt(parts.pop()!);
+        const type = parts.pop(); // 'in' or 'out'
+        const nodeId = parts.join('_');
+        return { nodeId, index, isInput: type === 'in' };
     }
 
     private setupInteraction() {

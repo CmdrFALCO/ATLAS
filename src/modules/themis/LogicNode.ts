@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export type LogicType = 'AND' | 'OR' | 'NOT' | 'SOURCE' | 'SINK';
+export type LogicType = 'AND' | 'OR' | 'NOT' | 'SOURCE' | 'SINK' | 'TIMER' | 'TOGGLE' | 'COUNTER';
 
 export class LogicNode extends THREE.Group {
     public nodeId: string;
@@ -46,6 +46,9 @@ export class LogicNode extends THREE.Group {
             case 'NOT': return 0x882222; // Red
             case 'SOURCE': return 0x228822; // Green
             case 'SINK': return 0x444444; // Grey
+            case 'TIMER': return 0x882288; // Purple
+            case 'TOGGLE': return 0x228888; // Cyan
+            case 'COUNTER': return 0x888822; // Gold
             default: return 0xffffff;
         }
     }
@@ -82,6 +85,7 @@ export class LogicNode extends THREE.Group {
         else if (type === 'NOT') { inputs = 1; outputs = 1; }
         else if (type === 'SOURCE') { inputs = 0; outputs = 1; }
         else if (type === 'SINK') { inputs = 1; outputs = 0; }
+        else if (type === 'TIMER' || type === 'TOGGLE' || type === 'COUNTER') { inputs = 1; outputs = 1; }
 
         console.log(`[LogicNode] ${this.nodeId} (${type}) -> Inputs: ${inputs}, Outputs: ${outputs}`);
 
@@ -108,8 +112,80 @@ export class LogicNode extends THREE.Group {
 
     public setState(active: boolean) {
         this.state = active;
+        this.updateVisuals();
+    }
+
+    // Generic Compute (for WP-10)
+    public inputs: boolean[] = [];
+    private prevInput0: boolean = false; // For Edge Detection
+    public data: any = {}; // Custom state (timer, count, etc)
+
+    public update(dt: number) {
+        // Timer Logic
+        if (this.type === 'TIMER' && this.data.timer > 0) {
+            this.data.timer -= dt;
+            if (this.data.timer <= 0) {
+                this.data.timer = 0;
+                this.compute(); // Re-evaluate state
+            }
+        }
+    }
+
+    public compute() {
+        if (this.type === 'SOURCE') return; // State toggled manually
+        if (this.type === 'SINK') {
+            this.state = this.inputs[0] || false;
+            this.updateVisuals();
+            return;
+        }
+
+        let result = false;
+        const in0 = this.inputs[0] || false;
+        const in1 = this.inputs[1] || false;
+
+        // Edge Detection
+        const risingEdge = in0 && !this.prevInput0;
+        this.prevInput0 = in0;
+
+        switch (this.type) {
+            case 'AND': result = in0 && in1; break;
+            case 'OR': result = in0 || in1; break;
+            case 'NOT': result = !in0; break;
+
+            case 'TIMER':
+                // Rising Edge starts timer (e.g. 2 seconds)
+                if (risingEdge) {
+                    this.data.timer = 2.0;
+                }
+                result = (this.data.timer > 0);
+                break;
+
+            case 'TOGGLE':
+                // Initialize state if needed
+                if (this.data.toggled === undefined) this.data.toggled = false;
+                if (risingEdge) {
+                    this.data.toggled = !this.data.toggled;
+                }
+                result = this.data.toggled;
+                break;
+
+            case 'COUNTER':
+                if (this.data.count === undefined) this.data.count = 0;
+                if (risingEdge) {
+                    this.data.count++;
+                }
+                // Threshold hardcoded to 3 for now, or configurable in userData?
+                result = this.data.count >= 3;
+                break;
+        }
+
+        this.state = result;
+        this.updateVisuals();
+    }
+
+    private updateVisuals() {
         // Visual feedback (Illuminate body)
-        if (active) {
+        if (this.state) {
             (this.body.material as THREE.MeshBasicMaterial).color.set(0x00ff00); // Bright Green
         } else {
             (this.body.material as THREE.MeshBasicMaterial).color.set(this.getTypeColor(this.type));
