@@ -87,50 +87,8 @@ export class ThemisModule implements AtlasModule {
             { type: 'SHOW_SUBTITLE', payload: 'ATLAS: Simulation Complete.' }
         ]);
 
-        // 3. Create Demo Circuit (Legacy) - Kept as the "Puzzle"
-        // Node A (Source 1)
-        const nodeA = new LogicNode('node_A', 'SOURCE', new THREE.Vector3(-0.5, 1.6, -1));
-        scene.add(nodeA);
-        this.nodes.push(nodeA);
-
-        // Node B (Source 2)
-        const nodeB = new LogicNode('node_B', 'SOURCE', new THREE.Vector3(-0.5, 1.3, -1));
-        scene.add(nodeB);
-        this.nodes.push(nodeB);
-
-        // Node G (Gate AND)
-        const nodeG = new LogicNode('node_G', 'AND', new THREE.Vector3(0, 1.45, -1));
-        scene.add(nodeG);
-        this.nodes.push(nodeG);
-
-        // Node C (Output)
-        const nodeC = new LogicNode('node_C', 'SINK', new THREE.Vector3(0.5, 1.45, -1));
-        scene.add(nodeC);
-        this.nodes.push(nodeC);
-
-        // WP-10 Playground: Advanced Nodes
-        const nodeTimer = new LogicNode('node_Timer', 'TIMER', new THREE.Vector3(1.2, 1.6, -1));
-        scene.add(nodeTimer);
-        this.nodes.push(nodeTimer);
-
-        const nodeToggle = new LogicNode('node_Toggle', 'TOGGLE', new THREE.Vector3(1.2, 1.3, -1));
-        scene.add(nodeToggle);
-        this.nodes.push(nodeToggle);
-
-        const nodeCounter = new LogicNode('node_Counter', 'COUNTER', new THREE.Vector3(1.2, 1.0, -1));
-        scene.add(nodeCounter);
-        this.nodes.push(nodeCounter);
-
-        // Map initial nodes
-        this.nodes.forEach(n => this.nodeMap.set(n.nodeId, n));
-
-        // DEBUG: Log Positions
-        this.nodes.forEach(n => console.log(`[Themis] Node ${n.nodeId} at ${n.position.toArray()} `));
-
-        // 2. Wiring
-        this.connect(scene, nodeA, 0, nodeG, 0); // A -> G(in0)
-        this.connect(scene, nodeB, 0, nodeG, 1); // B -> G(in1)
-        this.connect(scene, nodeG, 0, nodeC, 0); // G -> C
+        // 3. Create Demo Circuit (Legacy) & WP-10 Playground
+        this.restoreDefault();
 
         // 3. Setup Interaction
         this.setupInteraction();
@@ -432,7 +390,7 @@ export class ThemisModule implements AtlasModule {
 
                     if (action === 'save') this.save();
                     if (action === 'load') this.loadCircuit();
-                    if (action === 'clear') this.resetCircuit();
+                    if (action === 'clear') this.restoreDefault();
                 } else {
                     // Clicked empty space?
                     if (this.draftWire) {
@@ -580,6 +538,57 @@ export class ThemisModule implements AtlasModule {
             this.uiPanel.removeFromParent(); // Just in case it was detached
             this.uiPanel = null;
         }
+    }
+
+    private restoreDefault() {
+        console.log('[Themis] Restoring Default Circuit...');
+        this.resetCircuit();
+
+        const scene = this.scene;
+        if (!scene) return;
+
+        // Node A (Source 1)
+        const nodeA = new LogicNode('node_A', 'SOURCE', new THREE.Vector3(-0.5, 1.6, -1));
+        scene.add(nodeA);
+        this.nodes.push(nodeA);
+
+        // Node B (Source 2)
+        const nodeB = new LogicNode('node_B', 'SOURCE', new THREE.Vector3(-0.5, 1.3, -1));
+        scene.add(nodeB);
+        this.nodes.push(nodeB);
+
+        // Node G (Gate AND)
+        const nodeG = new LogicNode('node_G', 'AND', new THREE.Vector3(0, 1.45, -1));
+        scene.add(nodeG);
+        this.nodes.push(nodeG);
+
+        // Node C (Output)
+        const nodeC = new LogicNode('node_C', 'SINK', new THREE.Vector3(0.5, 1.45, -1));
+        scene.add(nodeC);
+        this.nodes.push(nodeC);
+
+        // WP-10 Playground: Advanced Nodes
+        const nodeTimer = new LogicNode('node_Timer', 'TIMER', new THREE.Vector3(1.2, 1.6, -1));
+        scene.add(nodeTimer);
+        this.nodes.push(nodeTimer);
+
+        const nodeToggle = new LogicNode('node_Toggle', 'TOGGLE', new THREE.Vector3(1.2, 1.3, -1));
+        scene.add(nodeToggle);
+        this.nodes.push(nodeToggle);
+
+        const nodeCounter = new LogicNode('node_Counter', 'COUNTER', new THREE.Vector3(1.2, 1.0, -1));
+        scene.add(nodeCounter);
+        this.nodes.push(nodeCounter);
+
+        // Map initial nodes
+        this.nodes.forEach(n => this.nodeMap.set(n.nodeId, n));
+
+        // Wiring
+        this.connect(scene, nodeA, 0, nodeG, 0); // A -> G(in0)
+        this.connect(scene, nodeB, 0, nodeG, 1); // B -> G(in1)
+        this.connect(scene, nodeG, 0, nodeC, 0); // G -> C
+
+        if (this.subtitles) this.subtitles.show('Circuit Reset.');
     }
 
     private resetCircuit() {
